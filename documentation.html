@@ -166,9 +166,6 @@
                 <li><a href="#proxynization-codes">Proxynization API</a></li>
               </ul>
           </li>        
-          <li>
-            <a href="http://status.##brand_api_domain##" target="newstatus">System Status</a>
-          </li>        
         </ul>
       </aside>
 <!-- END Sidebar **************************************************** -->
@@ -6224,7 +6221,7 @@ countryCode:US
             the <code>notifyURL</code> parameter. We recommend using the <code>notifyURL</code> as a method to know the merchants
             ##brand_name## <code>accountId</code> and status of the merchant creation request. For example, if an application goes
             from 'on hold' to 'approved' the notifyURL will be called to let the integrator know of the status change. Here’s an example
-            of what an API merchant creation could look like: <a href="https://apply.zift.io/demo" target="_new">apply.zift.io/demo</a></p>
+            of what an API merchant creation could look like: <a href="https://apply.zift.io/demo/" target="_new">apply.zift.io/demo</a></p>
             
             <div class="alert alert-warning" role="alert">
                 ##brand_name## strongly encourages integrators to implement client side data validation to improve the overall customer experience.
@@ -6466,7 +6463,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane active fade in" id="billing-customer-create-tab">
                 <p>The <code>~create</code> request creates a customer which then can save payment methods, and enroll in subscriptions.</p>
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/~create.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/~create.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/~create.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/~create.json</a>
                 </div>
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -6521,7 +6518,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane fade" id="billing-customer-find-tab">
                 <p>The <code>~find</code> request takes in a set of URL query parameters to filter by, and then returns a list of Customers matching the search. </p>
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/~find.json?" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/~find.json?</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/~find.json?" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/~find.json?</a>
                 </div>
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -6542,7 +6539,7 @@ countryCode:US
                     <div role="tabpanel" class="tab-pane active fade in" id="billing-customer-find-request-parameters">
                       <strong>The <code>~find</code> request does not take in a <code>.json</code> object. The parameters should be passed in the URL query string. </strong>
                       <div class="alert alert-info" role="alert"><strong>Example Call:</strong>&nbsp;&nbsp;
-                        <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/~find.json?offset=150&limit=25&firstName=Matthew" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/~find.json?offset=150&limit=25&firstName=Matthew</a>
+                        <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/~find.json?offset=150&limit=25&firstName=Matthew" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/~find.json?offset=150&limit=25&firstName=Matthew</a>
                       </div>
                       <table class="table table-bordered table-striped table-info table-font">
                         <tbody>
@@ -6579,7 +6576,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane fade" id="billing-customer-load-tab">
                 <p>The <code>~load</code> functionality provides the ability to retrieve the current configuration for a single specified customer in <code>.json</code> format. The parameters are described in the <strong>Response Object</strong> tab. </p>
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customerId]~load.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customerId]/~load.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customerId]~load.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customerId]/~load.json</a>
                 </div>         
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -6624,7 +6621,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane fade" id="billing-customer-modify-tab">
                 <p>The <code>~modify</code> request takes in parameters to modify the customer specified in the URL endpoint.</p>
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/~modify.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/~modify.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/~modify.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/~modify.json</a>
                 </div>
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -6766,7 +6763,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane fade" id="billing-payment-options-find-tab">
                 <p>The <code>~find</code> request takes in a set of parameters to filter by, and then returns a list of Payment Options matching the search. </p>
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/payment-options~find.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/payment-options~find.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/payment-options~find.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/payment-options~find.json</a>
                 </div>
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -6787,7 +6784,7 @@ countryCode:US
                     <div role="tabpanel" class="tab-pane active fade in" id="billing-payment-options-find-request-parameters">
                       <strong>The <code>~find</code> request does not take in a <code>.json</code> object. The parameters should be passed in the URL query string. </strong>
                       <div class="alert alert-info" role="alert"><strong>Example Call:</strong>&nbsp;&nbsp;
-                        <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/payment-options~find.json?offset=15&limit=20" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/payment-options~find.json?offset=15&limit=20</a>
+                        <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/payment-options~find.json?offset=15&limit=20" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/payment-options~find.json?offset=15&limit=20</a>
                       </div>
                         <table class="table table-bordered table-striped table-info table-font">
                             <tbody>
@@ -6824,7 +6821,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane fade" id="billing-payment-options-load-tab">
                 <p>The <code>~load</code> functionality provides the ability to retrieve the current payment options from a single specified customer in <code>.json</code> format. The parameters are described in the <strong>Response Object</strong> tab. </p>        
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customerId]/payment-options/[payment-option-id]/~load.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/payment-options/[payment-option-id]/~load.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customerId]/payment-options/[payment-option-id]/~load.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/payment-options/[payment-option-id]/~load.json</a>
                 </div>  
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -7020,7 +7017,7 @@ countryCode:US
                 <div role="tabpanel" class="tab-content tab-pane active fade in" id="billing-subscriptions-create-tab">
                   <p>The <code>~create</code> request creates a Subscription.</p>
                   <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                    <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~create.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~create.json</a>
+                    <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~create.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~create.json</a>
                   </div>
                   <div class="tabs tabs-text">
                     <!-- Request Object Pane -->
@@ -7075,7 +7072,7 @@ countryCode:US
                 <div role="tabpanel" class="tab-content tab-pane fade" id="billing-subscriptions-find-tab">
                   <p>The <code>~find</code> request takes in a set of parameters to filter by, and then returns a list of Subscription objects in <code>.json</code> format matching the search. </p>
                   <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                    <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~find.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~find.json</a>
+                    <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~find.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~find.json</a>
                   </div>
                   <div class="tabs tabs-text">
                     <!-- Request Object Pane -->
@@ -7096,7 +7093,7 @@ countryCode:US
                       <div role="tabpanel" class="tab-pane active fade in" id="billing-subscriptions-find-request-parameters">
                         <strong>The <code>~find</code> request does not take in a <code>.json</code> object. The parameters should be passed in the URL query string. </strong>
                       <div class="alert alert-info" role="alert"><strong>Example Call:</strong>&nbsp;&nbsp;
-                        <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~find.json?offset=5&limit=25&amountFrom=15&amountTo=75" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~find.json?offset=5&limit=25&amountFrom=15&amountTo=75</a>
+                        <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~find.json?offset=5&limit=25&amountFrom=15&amountTo=75" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions~find.json?offset=5&limit=25&amountFrom=15&amountTo=75</a>
                       </div>
                           <table class="table table-bordered table-striped table-info table-font">
                               <tbody>
@@ -7133,7 +7130,7 @@ countryCode:US
                 <div role="tabpanel" class="tab-content tab-pane fade" id="billing-subscriptions-find-adjustments-tab">
                   <p>The <code>adjustments~find</code> request takes in a set of parameters to filter by, and then returns the subscription adjustments as a list of Adjustment objects matching the search</p>
                   <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                    <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/adjustments/~find.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/adjustments/~find.json</a>
+                    <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/adjustments/~find.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/adjustments/~find.json</a>
                   </div>
                   <div class="tabs tabs-text">
                     <!-- Request Object Pane -->
@@ -7154,7 +7151,7 @@ countryCode:US
                       <div role="tabpanel" class="tab-pane active fade in" id="billing-subscriptions-find-adjustments-request-parameters">
                         <strong>The <code>~find</code> request does not take in a <code>.json</code> object. The parameters should be passed in the URL query string. </strong>
                       <div class="alert alert-info" role="alert"><strong>Example Call:</strong>&nbsp;&nbsp;
-                        <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/adjustments~find.json?offset=5&limit=25" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/adjustments~find.json?offset=5&limit=25</a>
+                        <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/adjustments~find.json?offset=5&limit=25" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/adjustments~find.json?offset=5&limit=25</a>
                       </div>
                           <table class="table table-bordered table-striped table-info table-font">
                               <tbody>
@@ -7191,7 +7188,7 @@ countryCode:US
                 <div role="tabpanel" class="tab-content tab-pane fade" id="billing-subscriptions-load-tab">
                   <p>The <code>~load</code> functionality provides the ability to retrieve the current settings from a single specified subscription in <code>.json</code> format. The parameters are described in the <strong>Response Object</strong> tab. </p>        
                   <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                    <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customerId]/subscriptions/[subscription-id]/~load.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~load.json</a>
+                    <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customerId]/subscriptions/[subscription-id]/~load.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~load.json</a>
                   </div>  
                   <div class="tabs tabs-text">
                     <!-- Request Object Pane -->
@@ -7236,7 +7233,7 @@ countryCode:US
                 <div role="tabpanel" class="tab-content tab-pane fade" id="billing-subscriptions-modify-tab">
                   <p>The <code>~modify</code> request takes in parameters to modify  the <code>note</code>, <code>nextBillingDate</code>, or the <code>paymentOptionId</code> associated with the subscription specified in the URL endpoint.</p>
                   <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                    <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~modify.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~modify.json</a>
+                    <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~modify.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~modify.json</a>
                   </div>
                   <div class="tabs tabs-text">
                     <!-- Request Object Pane -->
@@ -7310,7 +7307,7 @@ countryCode:US
                       <div role="tabpanel" class="tab-pane active fade in" id="billing-subscriptions-cancel-request-parameters">
                           <p><strong>Subscription Cancel Request</strong></p>
                           <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~cancel.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~cancel.json</a>
+                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~cancel.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~cancel.json</a>
                           </div>
                           <table class="table table-bordered table-striped table-info table-font">
                               <tbody>
@@ -7326,7 +7323,7 @@ countryCode:US
                       <div role="tabpanel" class="tab-pane fade" id="billing-subscriptions-uncancel-request-parameters">
                           <p>The Subscription <code>~uncancel</code> request will revert a cancelled subscription back to active status. There are no parameters passed. This request fails if the subscription passed to the request is not in a cancelled state. </p>
                           <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~uncancel.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~uncancel.json</a>
+                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~uncancel.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~uncancel.json</a>
                           </div>
                       </div>
                       <!-- Response Object Pane -->
@@ -7374,7 +7371,7 @@ countryCode:US
                       <div role="tabpanel" class="tab-pane active fade in" id="billing-subscriptions-freeze-request-parameters">
                           <p><strong>Subscription Freeze Request</strong></p>
                           <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp
-                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~freeze.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~freeze.json</a>
+                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~freeze.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~freeze.json</a>
                           </div>
                           <table class="table table-bordered table-striped table-info table-font">
                               <tbody>
@@ -7390,7 +7387,7 @@ countryCode:US
                       <div role="tabpanel" class="tab-pane fade" id="billing-subscriptions-unfreeze-request-parameters">
                           <p>The Subscription <code>~unfreeze</code> request will revert a frozen subscription back to active status. There are no parameters passed. This request fails if the subscription passed to the request is not in a frozen state. </p>
                           <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~unfreeze.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~unfreeze.json</a>
+                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~unfreeze.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~unfreeze.json</a>
                           </div>
                       </div>
                       <!-- Response Object Pane -->
@@ -7438,7 +7435,7 @@ countryCode:US
                       <div role="tabpanel" class="tab-pane active fade in" id="billing-subscriptions-pause-request-parameters">
                           <p><strong>Subscription Pause Request</strong></p>
                           <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~pause.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~pause.json</a>
+                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~pause.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~pause.json</a>
                           </div>
                           <table class="table table-bordered table-striped table-info table-font">
                               <tbody>
@@ -7454,7 +7451,7 @@ countryCode:US
                       <div role="tabpanel" class="tab-pane fade" id="billing-subscriptions-unpause-request-parameters">
                           <p>The Subscription <code>~unpause</code> request will revert a paused subscription back to active status. There are no parameters passed. This request fails if the subscription passed to the request is not in a paused state. </p>
                           <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~unpause.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~unpause.json</a>
+                            <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/{customer-id}/subscriptions/[subscription-id]/~unpause.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/subscriptions/[subscription-id]/~unpause.json</a>
                           </div>
                       </div>
                       <!-- Response Object Pane -->
@@ -7570,7 +7567,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane fade" id="billing-transactions-find-tab">
                 <p>The <code>~find</code> request takes in a set of parameters to filter by, and then returns a list of Transactions matching the search. </p>
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/transactions~find.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/transactions~find.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/transactions~find.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/transactions~find.json</a>
                 </div>
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -7591,7 +7588,7 @@ countryCode:US
                     <div role="tabpanel" class="tab-pane active fade in" id="billing-transactions-find-request-parameters">
                       <strong>The <code>~find</code> request does not take in a <code>.json</code> object. The parameters should be passed in the URL query string. </strong>
                     <div class="alert alert-info" role="alert"><strong>Example Call:</strong>&nbsp;&nbsp;
-                      <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/transactions~find.json?offset=5&limit=25&createDateFrom=2022-02-01" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/transactions~find.json?offset=5&limit=25&createDateFrom=2022-02-01</a>
+                      <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/transactions~find.json?offset=5&limit=25&createDateFrom=2022-02-01" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/transactions~find.json?offset=5&limit=25&createDateFrom=2022-02-01</a>
                     </div>
                         <table class="table table-bordered table-striped table-info table-font">
                             <tbody>
@@ -7682,7 +7679,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane fade" id="billing-transactions-load-tab">
                 <p>The <code>~load</code> functionality provides the ability to retrieve the current payment options from a single specified customer in <code>.json</code> format. The parameters are described in the <strong>Response Object</strong> tab. </p>        
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customerId]/transactions/[payment-option-id]/~load.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/transactions/[payment-option-id]/~load.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customerId]/transactions/[payment-option-id]/~load.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/customers/[customer-id]/transactions/[payment-option-id]/~load.json</a>
                 </div>  
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -7802,7 +7799,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane active fade in" id="billing-plans-create-tab">
                 <p>The <code>~create</code> request creates a plan which customers can subscribe to via the <code>Subscribe</code> API calls.</p>
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/plans~create.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/plans~create.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/plans~create.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/plans~create.json</a>
                 </div>
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -7857,7 +7854,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane fade" id="billing-plans-find-tab">
                 <p>The <code>~find</code> request takes in a set of parameters to filter by, and then returns a list of Plans matching the search. </p>
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/plans~find.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/plans~find.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/plans~find.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/plans~find.json</a>
                 </div>
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -7915,7 +7912,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane fade" id="billing-plans-load-tab">
                 <p>The <code>~load</code> functionality provides the ability to retrieve the current plan from a single specified customer in <code>.json</code> format. The parameters are described in the <strong>Response Object</strong> tab. </p>        
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/plans/[plan-id]/~load.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/plans/[plan-id]/~load.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/plans/[plan-id]/~load.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/plans/[plan-id]/~load.json</a>
                 </div>  
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -7960,7 +7957,7 @@ countryCode:US
               <div role="tabpanel" class="tab-content tab-pane fade" id="billing-plans-modify-tab">
                 <p>The <code>~modify</code> request modifies a plan based on the specified parameters.</p>
                 <div class="alert alert-info" role="alert"><strong>API Endpoint:</strong>&nbsp;&nbsp;
-                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/plans/[plan-id]/~modify.json" target="_new">https://sandbox-portal.##brand_api_domain##/api/v01/plans/[plan-id]/~modify.json</a>
+                  <a href="https://sandbox-portal.##brand_api_domain##/api/v01/plans/[plan-id]/~modify.json" target="_new" rel="noopener nofollow">https://sandbox-portal.##brand_api_domain##/api/v01/plans/[plan-id]/~modify.json</a>
                 </div>
                 <div class="tabs tabs-text">
                   <!-- Request Object Pane -->
@@ -9157,7 +9154,7 @@ countryCode:US
   <!--Terminal Overview-->
   <article>
     <h3 id="terminalOverview">Terminals Overview</h3>
-    <p>Zift is an Omni-Channel processing platform. Along with API based transactions and virtual terminals we also support transactions through physical terminals. Our physical terminals support swipe, dip, and tap, ApplePay and AndroidPay payment modes. In addition to the various models of terminals offered by Zift we also offer multiple ways to integrate our terminals into your processing workflow. Zift is proud to partner with Sunmi. <a href="https://zift.io/zifts-point-of-sale-terminals/" target="_new">Visit our list of available terminals</a> </p>
+    <p>Zift is an Omni-Channel processing platform. Along with API based transactions and virtual terminals we also support transactions through physical terminals. Our physical terminals support swipe, dip, and tap, ApplePay and AndroidPay payment modes. In addition to the various models of terminals offered by Zift we also offer multiple ways to integrate our terminals into your processing workflow. Zift is proud to partner with Sunmi. </p>
   </article>
 
   <!--Terminal Overview-->
