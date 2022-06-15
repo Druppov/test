@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>Zift API - Changelog</title>
+
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.png">
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar" data-offset="200">
+
+    <header class="site-header">
+
+      <!-- Top navbar & branding -->
+      <nav class="navbar navbar-default">
+        <div class="container">
+
+          <!-- Toggle buttons and brand -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+
+            <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="http://api.zift.io/"><img src="assets/img/logo.svg" alt="logo" height="46px"></a>
+          </div>
+          <!-- END Toggle buttons and brand -->
+
+          <!-- Top navbar -->
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://ziftpay.com/">Home</a></li>
+              <li><a href="http://api.ziftpay.com/index.php">Documentation</a></li>
+              <li><a href="http://ziftpay.com/contact/">Contact</a></li>
+            </ul>
+          </div>
+          <!-- END Top navbar -->
+
+        </div>
+      </nav>
+      <!-- END Top navbar & branding -->
+
+    </header>
+
+<!-- Modals -->
+
+  <!-- Signature Usage -->
+    <div class="modal fade" id="legacy-fields" tabindex="-1" role="dialog" aria-labelledby="legacy-fields">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="legacy-fields">Legacy Fields</h4>
+          </div>
+          <div class="modal-body">
+          To unify field names within the APIs and the user interface of the gateway, the following reference field names have been changed and will be completely phased out from use by the end of 2018:
+            <table class="table table-bordered table-striped">
+              <tbody>
+                <tr>
+                  <th>Deprecated Field Name</th>
+                  <th>New Field Name</th>
+                </tr>
+                <tr>
+                  <td>merchantCode</td>
+                  <td>merchantId</td>
+                </tr>
+                <tr>
+                  <td>merchantAccountCode</td>
+                  <td>accountId</td>
+                </tr>
+                <tr>
+                  <td>terminalCode</td>
+                  <td>terminalId</td>
+                </tr>
+                <tr>
+                  <td>referenceNumber</td>
+                  <td>transactionId</td>
+                </tr>
+                <tr>
+                  <td>providerReferenceNumber</td>
+                  <td>providerTransactionId</td>
+                </tr>
+                <tr>
+                  <td>originalReferenceNumber</td>
+                  <td>originalTransactionId</td>
+                </tr>
+                <tr>
+                  <td>aggregateReferenceNumber</td>
+                  <td>aggregateTransactionId</td>
+                </tr>
+                <tr>
+                  <td>submissionCode</td>
+                  <td>submissionId</td>
+                </tr>
+                <tr>
+                  <td>transactionCategory</td>
+                  <td>transactionCategoryType</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <main class="container">
+      <div class="row">
+
+        <!-- Main content -->
+        <article class="col-md-12 col-sm-12 main-content" role="main">
+
+          <header>
+            <br><br>
+            <h1>Changelog - Updated: 05/17/2022</h1>            
+            
+            <div class="alert alert-warning" role="alert"><strong>Note:</strong> New deprecated functionality effective June 15, 2021. See Deprecated Functionality section for details. 
+            If you have any questions about how this may effect your integration, please contact <code><a href="mailto:support@zift.io?subject=Credit Transactions">support@zift.io</a></code>.</div>
+            <ol class="toc">
+              <li><a href="#deprecated-fields">Deprecated Functionality</a></li>         
+              <li><a href="#v8.2.6">Version 8.2.6 Maintenance Release - Sandbox: 5/17/2022, Production: 6/07/2022 </a></li>
+              <li><a href="#v8.2.6">Version 8.2.5 Rolled Into 8.2.6 </a></li>
+              <li><a href="#v8.2.4">Version 8.2.4 Maintenance Release - Sandbox: 1/25/2022, Production: 2/24/2022 </a></li>
+              <li><a href="#v8.2.3">Version 8.2.3 Maintenance Release - Sandbox: 11/16/2021, Production: 12/06/2021 </a></li>
+              <li><a href="#v8.2.2">Version 8.2.2 Rolled Into 8.2.3 </a></li>
+              <li><a href="#v8.2.1">Version 8.2.1 Maintenance Release - Sandbox: 10/28/2021, Production: 11/11/2021 </a></li>
+              <li><a href="#v8.2">Version 8.2 Release - Sandbox: 8/31/2021, Production: 9/16/2021 </a></li>
+              <li><a href="#v8.1">Version 8.1 Release - Sandbox: 7/16/2020, Production: 8/11/2020 </a></li>
+              <li><a href="#v7.2apr">Version 7.2 April Maintenance Release - Sandbox: 4/7/2020, Production: 4/28/2020 </a></li>
+              <li><a href="#v7.2">Version 7.2 Release - Sandbox: 1/28/2020, Production: 3/17/2020 </a></li>
+              <li><a href="#v7.1dec">Version 7.1 December Maintenance Release - Sandbox: 11/26/2019, Production: 12/17/2019 </a></li>
+              <li><a href="#v7.1sep">Version 7.1 September Maintenance Release - Sandbox: 9/10/2019, Production: 9/17/2019 </a></li>
+              <li><a href="#v7.1jl">Version 7.1 July Maintenance Release - Sandbox: 7/9/2019, Production: 7/16/2019 </a></li>
+              <li><a href="#v7.1jn">Version 7.1 June Maintenance Release - Sandbox: 6/11/2019, Production: 6/25/2019 </a></li>
+              <li><a href="#v7.1">Version 7.1</a></li>
+              <li><a href="#v6.3.0">Version 6.3</a></li>
+              <li><a href="#v1.4.0">Version 5.3</a></li>
+              <li><a href="#v1.3.1">Version 5.2</a></li>
+              <li><a href="#v1.3.0">Version 5.1</a></li>
+            </ol>
+          </header>
+
+          <section>
+            <h3 id="deprecated-fields">Deprecated Functionality</h3>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th><strong>Feature</strong></th>
+                    <th><strong>Description</strong></th>
+                    <th><strong>Action</strong></th>
+                    <th><strong>Announced</strong></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Onboarding Response Codes Have Changed</td>
+                    <td>In an effort to standardize API response codes across all API endpoints and to abstract onboarding API users from the idiosyncracies of various bank networks the following response codes have changed<p>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                              <tr>
+                                <th width=40%><strong>Old Response Code</strong></th>
+                                <th><strong>New Response Code</strong></th>                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>A01 (Approved)</td>
+                                </tr>
+                                <tr>
+                                    <td>W</td>
+                                    <td>A02 (Approved with warnings)</td>
+                                </tr>
+                                <tr>
+                                    <td>P</td>
+                                    <td>A11 (Pending)</td>
+                                </tr>
+                                <tr>
+                                    <td>R</td>
+                                    <td>A12 (In Review)</td>
+                                </tr>                                
+                                <tr>
+                                    <td>J</td>
+                                    <td>X01 (Rejected)</td>
+                                </tr>                                
+                                <tr>
+                                    <td>D</td>
+                                    <td>D01 (Declined)</td>
+                                </tr>
+                                <tr>
+                                    <td>C</td>
+                                    <td>D02 (Needs Correction)</td>
+                                </tr>
+                                <tr>
+                                    <td>F</td>
+                                    <td>D03 (Failed)</td>
+                                </tr>
+                                <tr>
+                                    <td>E</td>
+                                    <td>D04 (Processor Error)</td>
+                                </tr>
+                                <tr>
+                                    <td>X</td>
+                                    <td>D19 (Unmapped Decline)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>This change is not backwards compatible.  It is recommended that integrators support both response codes formats and have their systems ready for this cut-over on June 30th 2021. Changes will be made available in Sandbox on 3/23/2021 for test.</td>
+                    <td>Independent Change</td>
+                  </tr>                  
+                  <tr>
+                    <td>Names of the returns files are changed</td>
+                    <td>To improve the consistency of naming conventions several files used in the batch specification underwent renaming. Starting with the 7.1 release, the name of a file which designates its category is placed before an extension of the file. For example returns.20170919.2000.zip will be renamed to 20170919.2000.returns.zip</td>
+                    <td>by July 1st 2018 make sure that you have made necessary changes in the code to use new names of the returns files instead of the old ones. </td>
+                    <td>7.1 release</td>
+                  </tr>
+                  <tr>
+                    <td>Get Parameters operation is deprecated</td>
+                    <td>Traditionally terminal parameters could be received via both <code>get-parameters</code> and <code>get-configuration</code> API operations. Starting with 6.3 release the <code>get-parameters</code> API call will deprecated and will no longer be supported. Terminal parameters can now be received via the <code>get-configuration</code> API call only. </td>
+                    <td> by July 1st 2018 make sure that you make the necessary changes in your code to retrieve terminal parameters via the <code>get-configuration</code> operation.</td>
+                    <td>7.1 release</td>
+                  </tr>
+                  <tr>
+                    <td>Get Parameters operation is deprecated</td>
+                    <td>Traditionally terminal parameters could be received via both <code>get-parameters</code> and <code>get-configuration</code> API operations. Starting with 6.3 release the <code>get-parameters</code> API call will deprecated and will no longer be supported. Terminal parameters can now be received via the <code>get-configuration</code> API call only. </td>
+                    <td> by July 1st 2018 make sure that you make the necessary changes in your code to retrieve terminal parameters via the <code>get-configuration</code> operation.</td>
+                    <td>7.1 release</td>
+                  </tr>
+                  <tr>
+                    <td>File Status and File Download operations are deprecated</td>
+                    <td>Previously, files could be downloaded and their statuses could be retrieved via both API and the user interface. Starting with the 7.1 release the <code>file-status</code> and <code>file-download</code> operations will be deprecated and are no longer supported. Files can now be accessed via the user interface or database only.</td>
+                    <td>: by October 1st 2018 make sure that you make necessary changes in the code to disallow usage of the <code>file-status</code> and <code>file-download</code> operations.</td>
+                    <td>7.1 release</td>
+                  </tr>
+                  <tr>
+                    <td>Response codes size is extended from 3 to 5 characters</td>
+                    <td>Traditionally the <code>responseCode</code> field consisted of 3 characters. As part of the response codes reorganization, starting with the 6.2 release the size of the <code>responseCode</code> field was extended from 3 to 5 characters where the fourth character is going to include a suffix indicating the source of an error and the fifth is reserved for future use.</td>
+                    <td>by April 1st 2018, make sure you have extended the size of the responseCode field to 5 characters to be able to accept new format of the response codes introduced in 6.2.</td>
+                    <td>6.2 release</td>
+                  </tr>
+                  <tr>
+                    <td>Legacy field names are deprecated</td>
+                    <td>For consistency with the user interface some of the API field names - such as <code>referenceNumber</code>,
+                    <code>merchantAccountCode</code>, <code>terminalCode</code>, etc - have been renamed. Old field names
+                    have been deprecated and will only be supported through 2018. <a href="#" data-toggle="modal" data-target="#legacy-fields">Click here</a> for a list of the depracated fields and their new names.</td>
+                    <td>By the end of 2018 make sure you have adopted the new naming conventions.</td>
+                    <td>6.2 release</td>
+                  </tr>
+                  <tr>
+                    <td>Support for GET request in UniCharge API is deprecated</td>
+                    <td>Traditionally, all processing API requests in the production environment could be submitted via GET
+                    and POST requests. However, the ability to submit GET requests was still supported as it could be
+                    used in the test environment. Starting with the 7.1 UniPay release, GET request is deprecated and is
+                    no longer supported.</td>
+                    <td>By April 1st 2018 all requests of the processing API regardless of the environment are required to be submitted via method POST request.</td>
+                    <td>6.3 release</td>
+                  </tr>
+                  <tr>
+                    <td>Distributions logic is replaced with split payments</td>
+                    <td>Previously, if there was a need to distribute merchant funds between several recipients, the funds distribution mechanism was used. It allowed a user to set a certain distribution schema that is used for automatic allocation of funds between merchant/reseller/vendor/holding accounts that took part in transaction processing. However, this mechanism did not allow to specify the distribution amount at transaction level. <br>In the 6.2 UniPay release, split payments mechanism, which allows to configure funds distribution schema for an individual transaction, was introduced. Starting with the 6.3 UniPay release, distributions logic is deprecated and no longer supported.</td>
+                    <td> by April 1st 2018 make sure that you make necessary changes in your code
+                    to use the split payments mechanism instead of the distributions logic.</td>
+                    <td>6.3 release</td>
+                  </tr>
+                  <tr>
+                    <td><code>transactionCode</code> in capture and <code>originalTransactionCode</code> in void requests are deprecated</td>
+                    <td>Traditionally reference to a transaction that was going to be voided or captured had to be submitted
+                    when executing <code>void</code> and <code>capture</code> operations. For cases when an internal gateway-generated
+                    identifier was used and submitted via the <code>referenceNumber</code> field (now called <code>transactionId</code>). For
+                    cases when an external submitter-generated identifier was used and submitted via the <code>originalTransactionCode</code> field for <code>void</code> operation and via the <code>transactionCode</code> field for <code>capture</code> operation. For field usage unification, starting with the 6.3 release, both internal and external transaction identifiers are submitted via the <code>transactionId</code> field (formerly called <code>referenceNumber</code>) for both <code>void</code> and <code>capture</code> operations. An internal identifier is submitted as it is, while an external identifier should be preceded by an asterisk (*). Starting with 7.1 release, the <code>originalTransactionId</code> field is deprecated and is no longer supported.</td>
+                    <td>by April 1st 2018 make sure that you made necessary changes in the code to use the <code>transactionId</code> field in <code>void</code> and <code>capture</code> operations instead of the <code>originalTransactionCode</code> and <code>transactionCode</code> fields respectively. Be advised that in future releases <code>transactionCode</code> field in capture operation will be repurposed.</td>
+                    <td>6.3 - 7.1 release</td>
+                  </tr>
+                  <tr>
+                    <td>Export operation is deprecated</td>
+                    <td>Previously transactions could be exported via both <code>export</code> API call and the user interface. Starting with 6.3 this operation will be replaced by the new reporting API where the Transaction Export report is available. Additionally, transaction information can be exported via the Transaction Export report on the user interface.</td>
+                    <td>by July 1st 2018 make sure that you make necessary changes in the code to disallow usage of the export operation.</td>
+                    <td>6.2 release</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </section>
+          
+          <section>          
+            <h3 id="v8.2.6">Version 8.2.6: (Sandbox: 5/17/2022, Production: 6/07/2022)</h3>            
+                          
+            <h4>Batch Transactions</h4>
+            <ul class="changelog">                
+                <li class="ch-fixed"><strong>Batch close without batch ID</strong><sup class="sup-new">(167884)</sup><br>In some instances, the system would attempt to close batches that have not been assigned a batch ID.  The system has been corrected to only close batches that have been assigned a batch ID.</li>                
+            </ul>
+            
+            <h4>Billing API</h4>
+            <ul class="changelog">                
+                <li class="ch-fixed"><strong>Invalid error when modifying nextBillingDate</strong><sup class="sup-new">(236486)</sup><br>Some users would receive an invalid error (System Error. Contact Support) when attempting to modify the nextBillingDate on a subscription.  The system now returns the correct error under the correct circumstances.</li>                
+                <li class="ch-fixed"><strong>Invalid nextInvoicingDate Calculation</strong><sup class="sup-new">(931687/999138)</sup><br>Under specific circumstances the value of the nextInvocingDate would be calculated incorrectly.  The system now returns the correct nextInvoicingDate.</li>                
+                <li class="ch-fixed"><strong>Billing failure for deferred subscriptions</strong><sup class="sup-new">(378930)</sup><br>In some instances, deferred subscriptions (frozen/paused) would fail to bill at the end of the deferment.  The system now processes the queued deferment event correctly.</li>                
+            </ul>
+            
+            <h4>Merchant Console</h4>
+            <ul class="changelog">                
+                <li class="ch-fixed"><strong>Unable to set user permissions</strong><sup class="sup-new">(817916/754550)</sup><br>Administrators on merchant accounts were unable to change the rights level for other users associated with the merchant.  Administrators can now set any user to any of the available rights levels in the merchant console.</li>                
+                <li class="ch-fixed"><strong>Unable to leave swipe mode in VT</strong><sup class="sup-new">(505486)</sup><br>When using the virtual terminal users could not exit the swipe mode when using the VT in conjunction with a reader.  Swipe mode can now be exited before or after user input.</li>                
+            </ul>
+            
+            <h4>Onboarding API</h4>
+            <ul class="changelog">                
+                <li class="ch-fixed"><strong>Character Support – Apostrophe</strong><sup class="sup-new">(114888)</sup><br>The apostrophe character is now supported by the business.legalName and deposit.holderName parameters in the onboarding API.</li>                
+            </ul>
+            
+            
+            
+            <h4>Statements</h4>
+            <ul class="changelog">                
+                <li class="ch-added"><strong>Statement Transaction List </strong><sup class="sup-new">(549200)</sup><br>Statements will now allow up to 200 transactions for display in the transaction section of the statement.  For lists of transactions greater than 200 for a specific statement period a merchant can view the full transaction list in the merchant console.</li>                
+            </ul>
+            
+          </section>
+          
+          
+          <section>          
+            <h3 id="v8.2.4">Version 8.2.4: (Sandbox: 01/25/2022, Production: 2/24/2022)</h3>            
+            
+            <h4>Statements</h4>
+            <ul class="changelog">                
+                <li class="ch-fixed"><strong>Statement Attachments</strong><br>Under some circumstances statement emails would go out without the statement attachment.<sup class="sup-new">(659620)</sup></li>                
+            </ul>
+            
+            
+            <h4>Transaction API</h4>
+            <ul class="changelog">                
+                <li class="ch-added"><strong>Realtime Bank Account Verification</strong><br>Transaction API users can now validate bank account numbers prior to processing ACH transactions.  See <code>isVerificationEnabled</code> parameter in the
+                <a href="https://api.zift.io/index.php#charge">Charge (Sale)</a> requset for more details.
+                <sup class="sup-new">(714458)</sup></li>
+                <li class="ch-added"><strong>JSON Support for Tokenization</strong><br>The tokenization API call now support JSON format in request/response<sup class="sup-new">(152813)</sup></li>
+            </ul>
+            
+            <h4>Billing API</h4>
+            <ul class="changelog">                                
+                <li class="ch-added"><strong>New Field: firstInvoicingDate</strong><br> new field has been added to the subscription object return that indicates the first time an invoice will be generated related to a customer’s subscription. This new field takes into account subscriptions that were frozen before the first billing for the given subscription.<sup class="sup-new">(342200)</sup></li>
+                <li class="ch-fixed"><strong>Card Not Unique Error</strong><br>Some users of the Billing API would occasionally receive an error indicating the provided credit card data was not unique within the customer scope when the card was in fact unique.<sup class="sup-new">(358696)</sup></li>
+            </ul>
+            
+            <h4>Onboarding API</h4>
+            <ul class="changelog">                
+                <li class="ch-updated"><strong>Additional Character Support</strong><br>Onboarding API and related onboarding forms now support the following additional characters. business.businessName (apostrophe) deposit.holderName (ampersand, comma)<sup class="sup-new">(114888)</sup></li>
+            </ul>
+            
+            <h4>Merchant Console</h4>
+            <ul class="changelog">                                
+                <li class="ch-added"><strong>New User Link Expiration</strong><br>New user confirmation link timeout is now a separate setting.  Links will also now automatically regenerate. <sup class="sup-new">(289061)</sup></li>
+                <li class="ch-fixed"><strong>View Subscription Error</strong><br>Some users were experiencing issues when attempting to view subscriptions in the context of a customer.  Users would receive an S20 UI error.<sup class="sup-new">(995715)</sup></li>
+                <li class="ch-fixed"><strong>Deposit Data Duplication</strong><br>In some instances the deposit data screen would duplicate table rows.<sup class="sup-new">(857423)</sup></li>
+                <li class="ch-fixed"><strong>Password Reset Error</strong><br>Some users experience a ‘value is missing’ error when resetting a user’s password in the Merchant UI.<sup class="sup-new">(336350)</sup></li>
+            </ul>
+            
+            <h4>Administration Portal</h4>
+            <ul class="changelog">                                                
+                <li class="ch-added"><strong>Approve Multiple Batch Files</strong><br>The administration UI now gives the user the ability to approve multiple batch files at the same time.<sup class="sup-new">(798063)</sup></li>
+                <li class="ch-fixed"><strong>View Batch Details Error</strong><br>Some users were experiencing issues when attempting to view batch details in the administration UI.  Users would receive an S20 UI error.<sup class="sup-new">(798063)</sup></li>
+            </ul>
+            
+          </section>
+          
+          
+          <section>          
+            <h3 id="v8.2.3">Version 8.2.3: (Sandbox: 11/16/2021, Production: 12/06/2021)</h3>
+            <h4>Onboarding API</h4>
+            <ul class="changelog">                
+                <li class="ch-added"><strong>Merchant Application Parking</strong><br>Merchant Applications (onboarding) can now be sent to Zift and held for later underwriting.<sup class="sup-new">(881679)</sup></li>
+            </ul>
+            
+            <h4>Tokenization</h4>
+            <ul class="changelog">                
+                <li class="ch-added"><strong>Tokenization JSON request/response</strong><br>The tokenization request now supports JSON formatting in the request and response.<sup class="sup-new">(152813)</sup></li>
+            </ul>
+            
+            <h4>Billing</h4>
+            <ul class="changelog">                
+                <li class="ch-fixed"><strong>Future Invoice Allocations</strong><br>Future invoices that are reversed will no longer affec the customer's balance or create allocation records.<sup class="sup-new">(970705)</sup></li>
+                <li class="ch-fixed"><strong>Modify Expired paymentOptions</strong><br>PaymentOptions with an expired credit card can now be edited.<sup class="sup-new">(786424)</sup></li>
+                <li class="ch-fixed"><strong>Failed Invoice Creation</strong><br>Fixed automated billing issues that resulted in a failure to generate invoices under specific conditions. <sup class="sup-new">(298988)</sup></li>
+            </ul>            
+            
+            <h4>Transaction</h4>
+            <ul class="changelog">                    
+                <li class="ch-fixed"><strong>Cost Plus Calculations</strong><br>Fixed issues related to cost plus calculations.<sup class="sup-new">(313780)</sup></li>
+                <li class="ch-updated"><strong>Processor Response Code Mapping</strong><br>Processor response codes EA, EB, EC are now mapped to D05.<sup class="sup-new">(586841)</sup></li>                
+            </ul>
+            </section>
+          
+          <section>          
+            <h3 id="v8.2.1">Version 8.2.1: (Sandbox: 10/28/2021, Production: 11/11/2021)</h3>
+            <h4>Onboarding API</h4>
+            <ul class="changelog">                
+                <li class="ch-added"><strong>Proxy Onboarding</strong><br>Proxy is now supported for Onboarding API calls.<sup class="sup-new">(881679)</sup></li>
+                <li class="ch-updated"><strong>business.ownershipStructureType Validation</strong><br>business structure SP will only allow officer.<sup class="sup-new">(701537)</sup></li>                
+                <li class="ch-updated"><strong>business.registrationCountryCode Validation</strong><br>business.registrationCountryCode is requried if values for business.registrationState and business.registrationYear are presented to the onboarding API.<sup class="sup-new">(778206)</sup></li>
+                <li class="ch-updated"><strong>Ownership Total Validation</strong><br>100% ownership allocation validation has been removed.<sup class="sup-new">(701537)</sup></li>
+            </ul>
+            
+            <h4>Transaction</h4>
+            <ul class="changelog">                    
+                <li class="ch-fixed"><strong>Manually Enterrerd Returns</strong><br>Under some circumstances manually entered returns or chargeback did not show up in the merchant's transaction list.<sup class="sup-new">(866055)</sup></li>
+            </ul>
+            
+
+            <h4>Merchant Console</h4>                  
+            <ul class="changelog">                        
+                <li class="ch-added"><strong>Password Reset on Next Login</strong><br>0Forced password reset on next login is now supported in the new merchant portal.<sup class="sup-new">(912524)</sup></li>
+                <li class="ch-fixed"><strong>Transaction: Refund</strong><br>Ability to refund transactions from batch uploads has been returned to the merchant portal UI.<sup class="sup-new">(516428)</sup></li>
+                <li class="ch-fixed"><strong>Adding paymentOptions (general)</strong><br>Under specific circumstances users could not add payment options to customers in the merchant portal UI.<sup class="sup-new">(397901)</sup></li>
+                <li class="ch-fixed"><strong>Adding paymentOptions (exp date)</strong><br>In some cases the merchant portal would not accept specific expiration date sequences.<sup class="sup-new">(205795)</sup></li>
+            </ul>
+          </section>
+          
+          <section>          
+            <h3 id="v8.2">Version 8.2: (Sandbox: 8/31/2021, Production: 9/16/2021)</h3>
+            <h4>Onboarding API</h4>
+            <ul class="changelog">                
+                <li class="ch-added"><strong>Manual Onboarding</strong><br>Using a specified onboarding profile ID you can now stub a merchant application for manual onboarding review.</li>
+                <li class="ch-fixed"><strong>Phone Field Validation</strong><br>Fixed phone number validation on the UI to allow from 10 digits up to 15 digits.</li>
+                <li class="ch-updated"><strong>Response Codes</strong><br>Response codes for the onboarding API endpoint have been updated to provides consistency amongst all Zift API endpoints. See Deprecated Functionality for details.</li>
+                <li class="ch-updated"><strong>Owner/Officer Fields Validation</strong><br>When onboarding a Sole Proprietorship the owner.1 fields are no longer required if the owner information is passed in the officer fields.</li>
+            </ul>
+            
+            <h4>Processing</h4>
+            <ul class="changelog">                    
+                <li class="ch-fixed"><strong>Test Ranges</strong><br>Addressed issues with test ranges and related API responses in the sandbox area.  Test ranges do not apply to production</li>
+                <li class="ch-fixed"><strong>Partial Void</strong><br>Addressed errors related to partial void of unsettled transactions. </li>
+            </ul>
+            
+            <h4>Billing API</h4>    
+            <ul class="changelog">                
+                <li class="ch-added"><strong>Allocation~find</strong><br>You can now search the billing API (allocation~find)  to find associated allocation  records related to a specified invoice. </li>
+                <li class="ch-updated"><strong>Billing API response code/messages</strong><br>Descriptions for the following response codes (V21, V22, F21, F22, V32, V35, L01, S29) have been moved from failureCode/failureMessage to responseCode/responseMessage. As if 8.2m failureCode/failureMessage are deprecated and will be removed 1 year after the 8.2 platform release (approximately 9/1/2022). </li>
+                <li class="ch-updated"><strong>customer~create - Customer Phone Required</strong><br>Customer phone number is now required when creating a new customer.  Previously this information was optional.</li>
+            </ul>
+            
+            <h4>Customers</h4>                  
+            <ul class="changelog">                      
+                <li class="ch-fixed"><strong>Multiple Merchant Account Association</strong><br>Customers can now have a one-to-many relationship to multiple merchant accounts.</li>
+            </ul>
+            
+            <h4>Reports and Statements</h4>                  
+            <ul class="changelog">                          
+                <li class="ch-added"><strong>1099 Data Reporting</strong><br>New 1099 built in report that shows information for credit/debit transactions</li>
+                <li class="ch-updated"><strong>Dispute Visibility</strong><br>Disputes are now displayed in a separate row in the Returns/Chargebacks Summary section of the chargeback report.</li>
+                <li class="ch-updated"><strong>True Deposit Date</strong><br>Where possible deposit date has been adjusted to reflect feedback from the banking network. Otherwise the deposit date will continue to be calculated based on the statement cycle.</li>                
+            </ul>
+            
+            <h4>Reporting API</h4>                  
+            <ul class="changelog">    
+                <li class="ch-added"><strong>Transaction List</strong><br>Added a  new parameter, "reportBasis," in the "transaction-list" Reporting API request. This parameter allows specifying the date range of which the data will be selected - Settlement Date or Authorization Date.</li>
+                <li class="ch-added"><strong>Transaction List</strong><br>Parameter "transaction.references.originCode" added to "transaction-list" response. </li>
+                <li class="ch-added"><strong>Transaction List</strong><br>The data separator in the 'type' parameter for the transaction-list API request has been changed from comma (,) to the pipe (|). Note: There is no deprecation or grace period for this change.</li>
+            </ul>
+            
+            <h4>Administrative Portal</h4>                  
+            <ul class="changelog">        
+                <li class="ch-added"><strong>Response Transaction Date</strong><br>Previously the transaction date for chargeback, return, reversal, decline, notice, reject transactions used the original transaction as the response transaction date.  Response transactions like chargeback, return, reversal, decline, notice, reject transactions will now display the date the transaction is received by the Zift system.</li>
+                <li class="ch-added"><strong>Iconography Update</strong><br>Updated various icon in the administrative and merchant portal UI</li>
+                <li class="ch-added"><strong>Related Transaction (ACH)</strong><br>Administration UI now allows you to search for related ACH transactions</li>
+            </ul>
+
+            <h4>Merchant Console</h4>                  
+            <ul class="changelog">        
+                <li class="ch-updated"><strong>Customer Billing Information</strong><br>Billing information on a customer record is now optional. Previously this information was required.</li>
+                <li class="ch-updated"><strong>Customer Phone Required</strong><br>Customer phone number is now required when creating a new customer.  Previously this information was optional.</li>
+                <li class="ch-fixed"><strong>Fee Calculation</strong><br>Addressed invalid fee calculations in the merchant console UI.</li>
+                <li class="ch-fixed"><strong>Transaction Export</strong><br>Addressed issue with terminal related transaction on the transaction export in the merchant portal.</li>
+                <li class="ch-fixed"><strong>Removed Address Requirement</strong><br>Address requirements for running payments in the merchant portal has been removed.</li>
+                <li class="ch-fixed"><strong>Postal/Zift Code Display</strong><br>Addressed display issues in the merchant portal related to postal/Zip Codes.</li>
+                <li class="ch-fixed"><strong>Transaction Export Filter</strong><br>Addressed issues with the transaction export filter.</li>
+                <li class="ch-fixed"><strong>Transaction Export Record Limit</strong><br>Address issue with truncation of export results when saving results to a file.</li>
+                <li class="ch-fixed"><strong>PaymentOption Creation</strong><br>Addressed intermittent errors that manifested when saving payment options. </li>
+            </ul>
+            <h4>Terminals</h4>                  
+            <ul class="changelog">        
+                <li class="ch-fixed"><strong>Sunmi Terminal Receipts</strong><br>Addressed intermittent receipt printing on supported Sunmi Terminals</li>
+            </ul>
+          </section>
+          
+
+          <section>
+            <h3 id="v8.1">Version 8.1 August Release (Sandbox: 7/16/2020, Production: 8/11/2020)</h3>
+            <br>
+            <ul class="changelog">
+              <li class="ch-added"><strong>Onboarding - ApplicationCode Field</strong><br>Enhanced the Onboarding Wizard UI form by adding an "application code" field as an alternative ID of the application used for editing the information. Additionally, an option to search for an application by its "code" was added to the Application Search form. Previously, the "application code" parameter was submitted through API with no possibility to choose it on the user interface.  </li>
+              <li class="ch-added"><strong>Onboarding - Default Value: desposit.accountType</strong><br>Set "deposit.accountType=C" as default in the onboarding API create request. Please refer to the Supported Operation section of the Onboarding API specification for more details. </li>
+              <li class="ch-added"><strong>Onboarding - Onboarding Agreements</strong><br>Enhanced the Agreement form by making it read-only for cases when the agreement was approved by a merchant and is marked as used on the user interface.</li>
+              <li class="ch-added"><strong>Onboarding - Hosted Pages URL</strong><br>Enhanced the Onboarding section of the Branding Profile UI form by adding a possibility to specify a separate URL for the onboarding pages. The indicated URL will be populated on browser line when opening the onboarding pages.</li>
+
+              <li class="ch-added"><strong>Processing API - Enhanced API Validation</strong><br>Depending on your processing configuration authorizations can be extended up to 30 days.</li>
+              <li class="ch-added"><strong>Processing API - Enhanced Find Operation</strong><br>Added new parameters "batchId" and "settlementDate" in Find Response Processing API to get more settlement information of a transaction processed.</li>
+              <li class="ch-added"><strong>Processing - Extended Authorization Period</strong><br>Depending on your processing configuration authorizations can be extended up to 30 days.</li>
+              <li class="ch-added"><strong>Processing - New Response Code</strong><br>Added a new response code "229 - Illegal Transaction" for the cards-batch integration. The new code maps to the " D01 - Denied by customer's bank" response code.</li>
+              <li class="ch-added"><strong>Processing - HPP Adobe DTM Analytics Support</strong><br>Added support for Adobe Dynamic Tag Management tool allowing for working with marketing tags. Now, the HPP logic is able to make the content of the "name.js" file embedded if the html file includes "<!--include src=name.js-->" tags. The file will be placed in the merchant local folder on the server, or under the default merchant.</li>
+              <li class="ch-added"><strong>Processing - HPP CORS Header Support</strong><br>Added support of the CORS Access-Control-Allow-Origin header for processing through hosted payment pages.</li>
+              <li class="ch-added"><strong>Reporting API - Transaction List</strong><br>The original transaction ID and Code are now returning as required fields for refund transactions in transaction list reporting API.</li>
+
+              <li class="ch-added"><strong>Terminals - Sunmi Terminal Support</strong><br>Implemented a new logic allowing a user to work with a new type of terminals based on OS Android - Sunmi. The terminal models support the standalone mode and the managed mode, provided that the POS client is installed directly on the terminal.</li>
+              <li class="ch-added"><strong>Terminals - Terminal Audit</strong><br>Enhanced the Audit perspective by adding an option to search for changes associated with terminals and terminal parameters.</li>
+              <li class="ch-added"><strong>Terminals - Terminal Cloud CAD Processing Support</strong><br>Added support of the CAD currency in realtime and batch processing profiles used for Cloud integration.</li>
+              <li class="ch-added"><strong>Terminals - USB Card Readers</strong><br>Added support for converting the track data retrieved from the USB card readers from the hexadecimal format into ASCII format.</li>
+              <li class="ch-added"><strong>API Localization</strong><br>Added the ability to internalize response messages in realtime responses. A new optional field "languageCode" was added in all processing API realtime requests to specify a language in which API response message will be returned.</li>
+              <li class="ch-added"><strong>Portal UI - User Session Expiration</strong><br>Enhanced the logic by adding an option to extend the session for a human user through the pop-up window on the client console.</li>
+              <li class="ch-added"><strong>Portal UI - Chargebacks and Reversals</strong><br>Enhanced the Transaction List form by adding new actions for chargeback and reversal transaction types.</li>
+              <li class="ch-added"><strong>Portal UI - Password Reset Message</strong><br>Adjusted the password recovery logic by adding a generic error message when a user enters a valid or invalid username.</li>
+
+              <li class="ch-fixed"><strong>Onboarding - Routing Number Exception</strong><br>Fixed an issue with a validation error returning when an invalid routing number was submitted in the onboarding API.</li>
+              <li class="ch-fixed"><strong>Billing API - Date Format</strong><br>Unified date format for management API and billing API responses to be "yyyy-MM-dd HH:mm:ss" in XURL, XML, JSON formats.</li>
+              <li class="ch-fixed"><strong>Billing API - Customer Code Validation</strong><br>Added validation for a "Code" value for cases when a new customer is created via billing API. Now, when creating a new customer with the Code value already existing in the system, a response code V35 with a message "Identifier of the referenced [ReferenceName] is not unique" is returned.</li>
+              <li class="ch-fixed"><strong>Terminal API - Holder Name Formatting</strong><br>Fixed an issue with a validation error returning when an "&" symbol was transmitted within the "holderName" field in the terminal API.</li>
+              <li class="ch-fixed"><strong>Terminal Management Service - Terminal Deactivation</strong><br>Implemented a new logic for terminal units to become automatically inactive when the associated Merchant Account is deactivated.</li>
+
+            </ul>
+          </section>
+
+
+
+          <section>
+            <h3 id="v7.2">Version 7.2 (Sandbox: 12/28/2020, Production: 3/17/2020)</h3>
+            <br>
+            <ul class="changelog">
+              <li class="ch-added"><strong>General (UI) - Terminal Migration</strong><br>Implemented the logic of terminal migration from one merchant account to another merchant account.</li>
+              <li class="ch-added"><strong>General (UI) - Bulk Terminal Parameters Modification</strong><br>Extended the filtering mechanism allowing users to modify terminal parameters in bulk.</li>
+              <li class="ch-added"><strong>General (UI) - Customer Documents Download</strong><br>Added ability to download documents associated with a customer.</li>
+              <li class="ch-added"><strong>General (UI) - Country and State Address Fields</strong><br>Enhanced country and state address representation on the user interface.</li>
+              <li class="ch-added"><strong>General (UI) - Date Format</strong><br>Unified the date format on all UI forms.</li>
+              <li class="ch-added"><strong>General (UI) - Merchant List Enhancements</strong><br>Enhanced the UI Merchant List form by adding filtration on active and inactive merchants and their type (merchant versus affiliate).</li>
+              <li class="ch-added"><strong>General (UI) - Customer Activation</strong><br>The customer activation option is now available for customers previously deactivated on the user interface.</li>
+              <li class="ch-added"><strong>General (UI) - Provider Response Message for Chargeback Transactions</strong><br>Added ability to retrieve provider response message for returns/chargeback transactions via a separate field.</li>
+              <li class="ch-added"><strong>Hosted Payment Pages - Connectivity URL within HPP Files</strong><br>Changed the connectivity URL from gates/httpform to gates/xurl within HTML files associated with hosted payment pages.</li>
+              <li class="ch-added"><strong>New Merchant Console - New Billing API</strong><br>When the new Client Console is used for processing transactions and working with customers, you can now perform the same tasks using the new billing API. It allows a merchant to create and manage pricing plans, customers, their subscriptions, payment options and transactions via both Console and API.</li>
+              <li class="ch-added"><strong>New Merchant Console - Fees Sections on Deposit Details</strong><br>The user interface of the new New Client Console has been expanded with new sections associated with fee processing. </li>
+              <li class="ch-added"><strong>New Merchant Console - Billing Activity Summary Form</strong><br>For the new Client Console, implemented a set of forms associated with billing. The new forms are Add Payment, Add Credit, Add Invoice and Billing Activity Details.</li>
+              <li class="ch-added"><strong>New Merchant Console - Splits Detail Form</strong><br>For the new Client Console, implemented the new Splits Details form that allows users to view merchant's splits breakdown within an affiliate.</li>
+              <li class="ch-added"><strong>Onboarding - Onboarding Phases</strong><br>Implemented a new mechanism allowing additional phase tracking within an onboarding application. Not available to all integrators.</li>
+              <li class="ch-added"><strong>Onboarding - Update Request in Onboarding API</strong><br>Added ability to update an onboarding application via API for the Vantiv Lowell integration. Not available to all integrators.</li>
+              <li class="ch-added"><strong>Onboarding - Expiring Password in Onboarding Application</strong><br>Added ability to monitor how much time remains before the onboarding application expires.</li>
+              <li class="ch-added"><strong>Onboarding - Merchant Verification Refactoring</strong><br>Refactored the merchant verification logic to comply with the onboarding refactoring across the gateway.</li>
+              <li class="ch-added"><strong>Reporting (UI) - Terminal Order Detail Report</strong><br>Implemented report to retrieve extended information about terminal orders.</li>
+              <li class="ch-added"><strong>Reporting (UI) - Data Export from the User Interface</strong><br>Implemented a new mechanism allowing a user to export data from Transaction Summary and Deposit Summary forms on the new client console. The export is accessible through the Export button that calls the merchant-statement-list Reporting API with all parameters selected on the form, and with the possibility to download search results.</li>
+              <li class="ch-added"><strong>Reporting (UI) - Customer Account Balance Aging Report</strong><br>Enhanced the Customer Account Balance Aging report by adding an "Organization" customer type to the "Account Name" column. Previously, the only customer type present in the column was "Person."</li>
+              <li class="ch-added"><strong>Reporting (API) - Split Transactions Report</strong><br>Added ability to download all transactions associated with a particular split transaction via API.</li>
+              <li class="ch-added"><strong>Reporting (API) - Request and Client Hosts in Transaction List</strong><br>Added ability to retrieve request host and client host via the Transaction List report.</li>
+              <li class="ch-added"><strong>Reporting (API) - Merchant Statement Export Report</strong><br>Extended merchant statement export report with new columns.</li>
+              <li class="ch-added"><strong>Response Codes - Error Codes</strong><br>Edited notifications for L04, L05 and L06 error codes associated with user's permissions and privileges.</li>
+              <li class="ch-added"><strong>Remittance - Associated Fees Forms</strong><br>Implemented new form - Associated Fees - for the fees charged by a brand to be registered on the user interface.</li>
+              <li class="ch-added"><strong>Transaction (API) - Merchant Time Zone</strong><br>Added ability to receive time zone information via the real time transaction API.</li>
+              <li class="ch-added"><strong>Transaction (API) - Routing Number Validation</strong><br>Added general validation rules for US routing numbers.</li>
+              <li class="ch-added"><strong>Terminal - Hexadecimal to ASCII Conversion</strong><br>Card swipe device outputs in Hexadecimal format are now supported.  Hexadecimal formats will automatically be converted to the supported ASCII format.</li>
+              <li class="ch-added"><strong>Terminal - Battery Charge Indicator</strong><br>Added ability to view battery life and Wi-Fi connectivity displayed on a terminal screen.</li>
+              <li class="ch-added"><strong>Terminal Management System - Active Terminal Update Profiles</strong><br>Added ability to sort out active terminal update profiles.</li>
+              <li class="ch-added"><strong>Terminal Management System - Terminal Update Profile Fields Validation</strong><br>Added limitation for the number of characters allowed for terminal update profile identification fields.</li>
+              <li class="ch-added"><strong>Terminal Management System - Terminal Last Activity Info</strong><br>Added ability to see when and how a terminal was used last time on the user interface.</li>
+              <li class="ch-fixed"><strong>Onboarding - Routing Number Exception</strong><br>Fixed an issue with a validation error returning when an invalid routing number was submitted in the onboarding API.</li>
+              <li class="ch-fixed"><strong>Onboarding - Email Address Validation</strong><br>Fixed an issue with the maximum number of characters for an email submitted via the onboarding API.</li>
+              <li class="ch-fixed"><strong>Onboarding - Application Code Field Length</strong><br>Fixed an issue with the number of characters for the applicationCode field submitted via the onboarding API.</li>
+              <li class="ch-fixed"><strong>Onboarding - Validation for Ownership Structure Type</strong><br>Fixed an issue with a validation error returning when an unsupported ownership structure type value was submitted by a processor via the onboarding API.</li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h3 id="v7.1dec">Version 7.1 December Maintenance Release (Sandbox: 11/26/2019, Production: 12/17/2019)</h3>            
+            <br>
+            <ul class="changelog">
+              <li class="ch-fixed"><strong>Void on Partial Capture</strong><br>UI/API/Logic: Fixed issues regarding void operations related to partial capture transactions.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 id="v7.1sep">Version 7.1 September Maintenance Release (Sandbox: 9/10/2019, Production: 9/17/2019)</h3>
+            <br>
+            <ul class="changelog">
+              <li class="ch-fixed"><strong>Real-time Transactions</strong><br>UI/API/Logic: Invalid values in reatail_transaction_cycle.</li>
+              <li class="ch-fixed"><strong>Batch Processing</strong><br>Response file download state issue.</li>
+              <li class="ch-fixed"><strong>Batch Processing (emulator)</strong><br>NPE in task generation</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 id="v7.1jl">Version 7.1 July Maintenance Release (Sandbox: 7/9/2019, Production: 7/16/2019)</h3>
+            <br>
+            <ul class="changelog">
+              <li class="ch-fixed"><strong>Proxynization</strong><br>UI/API/Logic: Management portal virtual terminal proxynization updates.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 id="v7.1jn">Version 7.1 June Maintenance Release (Sandbox: 6/11/2019, Production: 6/25/2019)</h3>
+            <br>
+            <ul class="changelog">
+              <li class="ch-fixed"><strong>Proxynization</strong><br>UI/API/Logic: Method POST issues related to Sale via the UI forms on current merchant console.</li>
+              <li class="ch-fixed"><strong>Proxynization</strong><br>UI/API/Logic: Method POST issues related to Sale via the UI forms on new merchant console.</li>
+              <li class="ch-fixed"><strong>Merchant Profile</strong><br>UI/API/Logic: Merchant profile configuration issue.</li>
+              <li class="ch-fixed"><strong>Onboarding</strong><br>UI/API/Logic: Issue with multiple AEX scorecards for one application.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 id="v7.1">Version 7.1 (Production: 3/12/2019)</h3>
+            <br>
+            <ul class="changelog">
+              <li class="ch-updated"><strong>Host Emulator</strong><br>Added ability to emulate the timeout scenario of the system when a response from real-time processors or the host emulator is delayed. When testing an integration with the host emulator, you can now specify a delay period within the memo field included in the transaction API request.</li>
+              <li class="ch-updated"><strong>Time Offset in Host Emulator</strong><br>Added ability to emulate time offset via the host emulator. You can now change current server time while testing your integration with the host emulator. To have time offset tested, a number of hours that are going to be added or subtracted from the current server time can be set on the Settings form on the System perspective.</li>
+              <li class="ch-updated"><strong>Visa Subscription Emulation</strong><br>Added ability to emulate receiving of the networkTransactionId field value via the host emulator. When testing an integration with the host emulator, you can now verify a correct implementation of the stored credentials logic via receiving the networkTransactionId field value and subsequently submitting it via the originalNetworkTransactionId field.</li>
+              <li class="ch-updated"><strong>Card Number Proxynization</strong><br>Enhanced the validation mechanism for card numbers when proxynization is used</li>
+              <li class="ch-updated"><strong>Masked Account Number in Tokenization Response</strong><br>Added ability to receive a masked account number within the tokenization API response. Masked account number can now be retrieved within the accountNumberMasked field within the tokenization API response.</li>
+              <li class="ch-updated"><strong>Related Transactions</strong><br>Added ability to download all transactions associated with the specific one via API.</li>
+              <li class="ch-updated"><strong>Partial Capture Transactions</strong><br>You can now make either full or partial capture on the transactions executed through the processors that support single partial capture. Previously, only processors that support multiple partial capture could process transactions with partial capture.</li>
+              <li class="ch-updated"><strong>Onboarding - Time Zone on Onboarding Wizard Form</strong><br>When setting the time zone for a merchant via the Onboarding Wizard form on the Merchant perspective, you can now select a country code followed by the country flag. Previously, a time zone could be set as a country name without any visual representation of any kind.</li>
+              <li class="ch-updated"><strong>HPP Configuration Error Response Code</strong><br>Added a new response code and message for cases when there is an issue with payment page configuration.  new response code is now returned by the system when an HPP is configured incorrectly. When this error occurs, please contact support.</li>
+              <li class="ch-added"><strong>Onboarding - Multiple Business Owners</strong><br>Added ability to register multiple business owners during merchant's onboarding. To comply with new federal regulations, you can now register all business owners with a business stake of 25% or above (for high risk businesses - 10% or above) during the onboarding process via either API or the user interface.</li>
+              <li class="ch-added"><strong>Onboarding - Expiring Session in Onboarding Application</strong><br>Added ability to monitor how much time remains before the onboarding session expires.</li>
+              <li class="ch-added"><strong>TMS - Terminal Diagnostics</strong><br>Implemented mechanism that allows to access a result of the terminal diagnostics on the user interface. You can now check the state of the terminal and diagnose possible issues with the terminal via the Diagnostics form available under the Details button on the Terminal perspective. Additionally, if the information on the user interface is outdated, you can now run diagnostics via the Terminal Message form on the Portfolio perspective or via API.</li>
+              <li class="ch-added"><strong>New Merchant Console</strong><br>The Console perspective is now available through the designated logon form, which has a standard access functionality complemented with a specific component used for hiding/revealing of an entered password. This component is applied to all forms based on the new ZK version.</li>
+              <li class="ch-added"><strong>New Transaction-List Function</strong><br>You must now use the transaction-list function instead of export.</li>
+              <li class="ch-added"><strong>Split Payments</strong><br>Extended a range of transaction types for which pull-ins/pull-outs are generated. For cases when a previously split credit/refund transaction is made, the system now generates pull-in/pull-out transactions for the amounts that are supposed to be withheld from several participants. Previously, pull-in/pull-out transactions were generated for chargebacks/reversals only.</li>
+              <li class="ch-added"><strong>Batch Split Payments</strong><br>For cases when it is required to split a transaction included in a batch between two or more affiliates, you can now submit the identifier of a previously created split schema for the transaction. Previously, only real-time transactions could be split.</li>
+            </ul>
+          </section>
+
+            <section>
+            <h3 id="v6.3.0">Version 6.3 (Production: 5/31/2018)</h3>
+            <br>
+            <ul class="changelog">
+              <li class="ch-fixed"><strong>Legacy Names in API Responses</strong><br>Fixed an issue with legacy field names being returned in the bank-data API response instead of the new ones. Due to a bug, when the accountId field was sent in the bank-data request, the legacy name, such as merchantAccountCode, was returned in the response. The issue is fixed now, and the new convention of the API field names is used all across the API.</li>
+              <li class="ch-fixed"><strong>Temporary Password for Onboarding Application</strong><br>Fixed an issue with a permanent password being present in the onboarding API response when a session password was used.  Due to a bug, a user could see both a permanent service user password and the generated session password while using the onboarding application. The issue is fixed now, and only a generated session password is present in the onboarding API response.</li>
+              <li class="ch-fixed"><strong>Zeros in Onboarding Application Issue</strong><br>Fixed an issue with business details tab being shown incorrectly on the onboarding application for affiliates. Due to a bug, extra zeros were displayed within the business details tab. The issue is fixed now, and tabs of the onboarding application are shown as expected.</li>
+              <li class="ch-fixed"><strong>Onboarding Application Issue</strong><br>Fixed an issue with a merchant being successfully onboarded with errors within the gateway. Due to a bug, when a comma was submitted within the deposit.holderName API field, the onboarding application was processed by a processor but could be either created with an empty field value or duplicated within the gateway. The issue is fixed now, and onboarding applications are created as expected.</li>
+              <li class="ch-fixed"><strong>Onboarding Validation Issue</strong><br>Fixed an issue with the validation mechanism in the onboarding API. Due to a bug, a generic system error was returned in an onboarding response instead of a corresponding validation error. The issue is fixed now, and all errors are returned as expected.</li>
+              <li class="ch-fixed"><strong>Onboarding Fields Validation</strong><br>Fixed an issue with several onboarding API fields not being validated correctly. Due to a bug, multiple API fields were not validated when create API request was being submitted. The issue is fixed now, and the onboarding application validation mechanism works as expected.</li>
+              <li class="ch-fixed"><strong>Password Expiration Notifications Issue</strong><br>Fixed an issue with password expiration notifications not being branded according to the settings of the branding profile. Due to a bug, the password expiration notification was received without branded data, such as portal name or URL. The issue is fixed now, and all notifications are generated correctly.</li>
+              <li class="ch-fixed"><strong>Monthly Processing Statement Report</strong><br>Fixed an issue with Monthly Processing Statement Report not including required columns. Due to a bug, deposit activity total amount values were not shown in the report. The issue is fixed now, and amount can be reviewed in Deposit Activity Total field. Additionally, visual representation of the Monthly Processing Statement report is corrected for PDF format. The issue is fixed now, and all required columns can be reviewed via the report.</li>
+              <li class="ch-updated"><strong>Sandbox Server Ciphers</strong><br>Disabled weak ciphers for transaction processing through sandbox to fully comply with PCI requirements.</li>
+              <li class="ch-updated"><strong>Cloud Pingdom Check</strong><br>You can now verify availability of the terminal cloud using the Pingdom monitoring service.</li>
+              <li class="ch-updated"><strong>Support for HPP in iframes is discontinued</strong><br>Discontinued support for embedding of the hosted payment pages in the application via a frame/iframe. To correspond to the PCI security requirements, a designated filter is now added to disable the usage of hosted payment pages opening via frame/iframe. Required action: by September 1st 2018, embedding of HPP is going to be forbidden. Make sure that you do not use frame/iframe and open hosted payment pages in new tabs.</li>
+              <li class="ch-updated"><strong>Required Name for New Reports</strong><br>Adjusted validation of the report name during the administrative report creation procedure. It is now required to indicate the name of a newly-added report via the Reporting form on the System perspective. Previously, a new report could be created with a blank name.</li>
+              <li class="ch-updated"><strong>Chargebacks/Returns Notification Adjustment</strong><br>Adjusted notifications for chargeback cases and chargeback/returns files. Text of the notification associated with chargeback cases/chargebacks/returns was adjusted to correspond the generic template of the gateway notifications. Client-associated fields, such as company name, can now be taken either from a branding profile or an associated portfolio. Additionally, added important information for direct debit returns has been added to the notification.</li>
+              <li class="ch-updated"><strong>Transaction Category Type</strong><br>Category field within the gateway to correspond to the naming convention within the system. Also see <a href="http://api.ziftpay.com/changelog.html#deprecated-fields">Deprecated Fields</a></li>
+              <li class="ch-updated"><strong>External Identifier in Void Operation</strong><br>Changed the mechanism allowing to submit an external system identifier in the void API call. You can now use the transactionId API field within the void operation for submitting both a gateway-generated identifier of the transaction (transactionId) and an identifier of a transaction within a submitter's system (transactionCode). If an external identifier is submitted, it is required to be preceded with an asterisk (*). Previously, an external identifier was submitted via originalTransactionCode field, that is now deprecated. Required action: by July 1st 2018, make sure that you made necessary changes in the code to use the transactionId field in void API operation instead of the originalTransactionCode field. Please refer to Supported Operations and Change History under Real-Time API specification for more details.</li>
+              <li class="ch-updated"><strong>Transaction Receipt Enhancement</strong><br>Adjusted the template of gateway-generated receipt to correspond to the one generated by a terminal. To correspond to the terminal-generated receipt template, the following changes have been made to the gateway receipt: name of the "Net (USD)" field was changed to "Total (USD)". In EMV Data section, "PNN" and "APP" tags were added. In "Adjustments/Surcharges" section, "Subtotal" column containing total amount without additional payments (cashback, tip, fee, tax) was added, and "Transaction Total" field value was changed to the amount with all additional payments included. Previously, the fields in gateway and terminal receipts could differ which led to the discrepancies in the information provided within them.</li>
+              <li class="ch-updated"><strong>Split Payments - Pull-In/Pull-Out Issue in PDF Formatted Statements</strong><br>Enhanced the view of pull-in and pull-out transactions in the merchant statement. You can now retrieve the information about pull-in and pull-out transactions in the merchant statements exported in PDF format. Previously, the pull-in and pull-out transactions could be shown incorrectly.</li>
+              <li class="ch-added"><strong>Merchant Logo</strong><br>Added ability to retrieve the logo associated with a merchant via API. You can now download a merchants logo, which was previously added to the merchants branding profile, via API. Previously, a merchants logo could be retrieved only via the Branding form.</li>
+              <li class="ch-added"><strong>Terminal Fields in Find API Response</strong><br>Added ability to retrieve terminal information about processed transactions. You can now retrieve terminal data associated with a transaction via API. Previously, terminal fields could be reviewed only in the response of the original transaction.  The terminalId, cardApplicationName, receiptTagData, cycleCode, accountData, currencyCode and fallbackReasonCode fields can be retrieved via the find API call.</li>
+              <li class="ch-added"><strong>Approval Code in Find API Response</strong><br>Added ability to retrieve approval code of processed sale and sale-auth transactions. You can now retrieve the approval code associated with a transaction via API. Previously, approvalCode could be reviewed only in the response of the original transaction. he approvalCode field value can be retrieved via the find API call.</li>
+              <li class="ch-added"><strong>Entry Mode on Gateway Receipts</strong><br>Enhanced gateway receipts with entry mode information. You can now retrieve the entry mode associated with a transaction via a gateway-generated receipt. Previously, this information was available only at the user interface and on terminal receipts.</li>
+              <li class="ch-added"><strong>Transaction Search by Token</strong><br>Added ability to locate transactions by a token value generated by a processor's system. You can now search for transactions associated with processor-generated token value via the Transactions form on the Console, Merchant and Monitoring perspectives. Previously, transactions could be located using only gateway-generated tokens.</li>
+              <li class="ch-added"><strong>Search Results Limitation</strong><br>Added ability to limit a number of search results on the user interface. You can now limit the number of search results for files (via the Files form on the Merchant perspective), orders (via the Terminal Orders List form on the Console, Merchant and Reseller perspectives), errors (via the Errors form on the Audit perspective) and statements (via the Merchant Statements form on the Monitoring perspective and Statements form on the Merchant perspective). Previously, all available search results that met the search criteria were shown in the list of results which could lead to the system overload in case of a big number of records available.</li>
+              <li class="ch-added"><strong>Aggregated Files Display</strong><br>Added ability to review aggregated files on the user interface. If file aggregation is enabled for a merchant, you can now search and review the files that have been aggregated. For this purpose, the merchant with the ID 1000 is used on the File Store form on the Monitoring and System perspectives. Previously, such files could be reviewed in the database only.</li>
+              <li class="ch-added"><strong>Aggregated Files Display</strong><br>Added ability to review aggregated files on the user interface. If file aggregation is enabled for a merchant, you can now search and review the files that have been aggregated. For this purpose, the merchant with the ID 1000 is used on the File Store form on the Monitoring and System perspectives. Previously, such files could be reviewed in the database only.</li>
+              <li class="ch-added"><strong>Payment Plan Status on UI</strong><br>Added ability to review an upcoming status of a payment plan on the user interface. You can now see what status a specific customer's payment plan is going to obtain within the Payment Plans section via the View Customer form on the Console perspective. Additionally, ability to freeze fixed payment plans via the Freeze button is added on the View Payment Plan form on the Console perspective. Previously, the upcoming status of the payment plan was not shown in general customer's settings.</li>
+              <li class="ch-added"><strong>Reporting API</strong><br>Implemented new API allowing for retrieval of specified reports. You can now generate reports via the designated reporting API. Among the reports that can now be obtained via this API are the following: Merchant Statement, Merchant Statement List, Reseller Statement, Reseller Statement List, Reseller Statement Breakdown, Deposit List, Transaction Receipt, Transaction List and Terminal List reports.</li>
+              <li class="ch-added"><strong>Balances Form for Split Payments</strong><br>Implemented a new form - Balances, which allows to review how much money should be collected by and deposited to merchants/affiliates that took part in split transactions. You can now see the balance of a merchant or an affiliate showing the amounts of debts between them as a result of split payments via the Balances form under the Remittance button on the Console and Merchant perspectives.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 id="v1.4.0">Version 5.3 (Production: 11/19/2016)</h3>
+            <br>
+            <ul class="changelog">
+              <li class="ch-fixed"><strong>Provisioning Callback Response</strong><br>Fixed the issue with no data sent to the URL associated with callback. Due to a bug, a user could not see provisioning response when being redirected to the one of the callback URLs (notifyURL, returnURL, cancelURL). The issue is fixed now, and when a callback is used, the respective data is shown.</li>
+              <li class="ch-fixed"><strong>Terms and Conditions Issue</strong><br>Fixed issue with misspelling of the user agreement checkbox title in the onboarding application. Due to a bug, there was a spelling mistake in Terms and Conditions agreement checkbox. Title of the checkbox has been changed to “I agree to the Terms and Conditions”.</li>
+              <li class="ch-fixed"><strong>Redirecting Issue for Onboarding Application</strong><br>Fixed the issue with incorrect redirection for onboarding application. Due to a bug, users got redirected to the incorrect onboarding application form after submitting a respective API request. The issue is fixed now, and an onboarding application works as expected when using provisioning API.</li>
+              <li class="ch-added"><strong>Onboarding Application</strong><br>Implemented an onboarding application that allows for the supply of information from a merchant to the provisioning company directly. You can now provide an external software company that needs to board merchants with a brandable onboarding application that is aimed at collecting information from a merchant. The application collects all necessary information that will be further submitted to the processor that performs provisioning. Provisioning response can be delivered in real-time or via callback, which is subject to a specific processor. Please refer to Provisioning API specification for more details.</li>
+              <li class="ch-added"><strong>Default Settings</strong><br>Added mechanism allowing for the assignment of priority to default settings of different system levels. You can now control what level – system, portfolio, reseller – is prioritized for defaults. Defaults assigned by a higher level can be overridden by a lower level. For example, if a portfolio has batch review enabled, a reseller can disable this setting for newly created associated merchants by configuring a setting on the Defaults form. If no defaults on a level lower than system is enabled, system settings set as defaults are applicable. To override a setting, configure it as needed and then click the enable button via the Defaults form on the Reseller and Portfolio perspectives.</li>
+              <li class="ch-added"><strong>Provisioning Validation</strong><br>Added extended validation mechanism to the provisioning API, the user interface and information obtained from a processor. The validation mechanism for onboarding application works similiar to the same mechanism within the gateway. Validation works both for visible and hidden fields and pages now.</li>
+              <li class="ch-updated"><strong>Support System</strong><br>Moved support system settings from System to Portfolio perspective. You can now set up support system credentials for a particular portfolio using the Details form on the Portfolio perspective. Previously, the ability to control support system settings was available for the entire system only.</li>
+              <li class="ch-updated"><strong>Processor Type Field</strong><br>Added ability to control whether transaction search by a processor is available within the system. You can now hide the Processor Type field for Portfolio1 and Portfolio2 security levels. For users that are lower than portfolio this field is now always unavailable. Previously, search by processor code was available for all security levels, so merchants could see the information about all processors within the system. Please refer to Security Management Guide under Self-study section for additional information about security levels.</li>
+              <li class="ch-updated"><strong>IDs in Provisioning API</strong><br>Renamed code related fields in Provisioning API. resellerCode, merchantCode, merchantAccountCode and portfolioCode fields were renamed to resellerId, merchantId, accountId and portfolioId respectively. Previously, fields with code in the name could cause confusion because of their respective names on the user interface. If reseller reference code is submitted within resellerId field, the value must be preceded by an asterisk (i.e. resellerId=*00001).</li>
+              <li class="ch-updated"><strong>Driver License Country Code</strong><br>Added driver licence country code to the business information about merchant. You can now provide information about a merchant’s driver license country on the Business Owner form on the Merchant perspective. Previously, only driver license state information could be added.</li>
+              <li class="ch-updated"><strong>Gift Card Management</strong><br>Added ability to control whether API operations with gift cards are available for a particular processor or not. You can now manage whether gift cards operations are available while processing with particular providers. By default, Heartland, STS, FD Rapid Connect and Vantiv processors can accept API calls associated with gift cards. Previously, there was no ability to switch off gift card processing within the system. Gift card processing with a particular provider can be controlled via isCardManagementSupported field within a respective processor profile.</li>
+              <li class="ch-updated"><strong>Real-time and Batch Fees</strong><br>Added separation of fees charged to chargebacks, reversals and returns for real-time and batch transactions. You can now define whether chargebacks, reversals and returns are associated with real-time transactions or batch files. Previously there was no ability to separate real-time and batch transactions on merchant statements.</li>
+              <li class="ch-updated"><strong>Page Management in Provisioning API</strong><br>Adjusted page management mechanism in provisioning API. You can now submit one or more values without dashes and in random order within pageFormat field. Additionally, you can now submit H letter for cases when a sub-header is required to be present on the pages within the onboarding application. Previously, all values were required to be submitted in a certain order, and if one or more values should not be passed, they had to be replaced with a dash sign. Please refer to Page Management integration note under Provisioning API specification for more details.</li>
+              <li class="ch-updated"><strong>Date of Birth Validation</strong><br>Enhanced validation mechanism on the user interface of onboarding application. Only 18 years old business owners can apply for merchant accounts now. A respective validation mechanism was added to Date of Birth field. Additionally, added ability to receive information about field format being incorrect right after entering an incorrect value. Previously, an incorrect birthdate could be submitted and validation worked only after the entire form was submitted, so it could lead to cases when a user was supposed to enter all information once again.</li>
+              <li class="ch-updated"><strong>Estimates Validation</strong><br>Enhanced validation for estimates related fields within the onboarding application. You can now submit only digits within estimates fields. If no values should be submitted, these fields can be left empty. Previously, when no values should be submitted, the system still required them to be submitted.</li>
+              <li class="ch-updated"><strong>Tax ID and SSN</strong><br>Added ability to enter SSN value instead of tax ID for sole proprietorship. Tax ID label is now changed automatically to SSN if sole proprietorship is chosen as a business type when doing provisioning via the onboarding application. previously, there was no separation according to a business type.</li>
+              <li class="ch-updated"><strong>Onbording Confirmation Message</strong><br>Added procedure confirmation message to the Onbording application form. For cases when an onbording form is completed by a merchant, an acceptance message is displayed on the gateway to confirm the completion of the procedure, both successful and failed. Integrators will handle customization of final page with redirects if needed.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 id="v1.3.1">Version 5.2 (Production: 6/23/2016)</h3>
+            <br>
+            <ul class="changelog">
+              <li class="ch-added"><strong>Terminals Creation without Order</strong><br>Implemented mechanism to allow for adding new terminals without previously created orders. You can now add new terminals to merchants with no previously submitted order using the Terminals form on the Merchant perspective. Additionally, the New Fulfillment Center form was enhanced with a Terminal Ordering Required checkbox that controls whether an order can be created or not.</li>
+              <li class="ch-added"><strong>BIN Data and Bank Data</strong><br>Implemented mechanism that allows receiving of bank identification number or bank data associated with a submitted transaction. You can now submit a respective API request to retrieve credit card BIN data or account number bank data for transactions associated with a particular merchant. Additionally, this information is shown on View Transaction form on the user interface. Previously, there was no ability to get this information for transaction made within the gateway.
+              <br>BIN data can be retrieved with bin-data API request and bank data can be retrieved with bank-data API request. Please refer to Supported Operations under Real-Time API specification for more details.</li>
+              <li class="ch-added"><strong>MAC and PIN Keys</strong><br>Implemented mechanism allowing the receiving of MAC/PIN keys values. You can now submit a respective API request to receive the value of MAC key for Canadian EMV transactions and the value of PIN key for both US and Canadian EMV transactions. The information can be retrieved with a separate API request or as a part of sale, credit, account verification or balance inquiry responses. Previously, there was no ability to retrieve the information about the keys available within the system. Additionally, API pinCode and dukpt fields were renamed to pinValue and ksnValue respectively.<br>MAC/PIN keys information can be retrieved with get-keys, sale, sale-auth, credit, credit-auth, account-verification, balance-inquiry API requests or via terminalMessage field as a part of API response. Please refer to Supported Operations and Integration Notes under Real-Time API specification for more details.</li>
+              <li class="ch-added"><strong>Download Resource via API</strong><br>Implemented mechanism allowing to download resources associated with a particular transaction. You can now submit a respective API call to download resources, for example signature image submitted with the transaction. Previously, there was no ability to retrieve information that was uploaded via API. Resources can be retrieved with download-resource API request. Please refer to Supported Operations under Real-Time API specification for more details.</li>
+              <li class="ch-added"><strong>Subscription Returns Files</strong><br>Added ability to obtain subscription returns files. You can now receive returns subscription files with a list of subscriptions that had been initially approved, but were declined by a processor after some period of time. Please refer to Supported Operations under Batch API for more details.</li>
+              <li class="ch-added"><strong>PGP Encrypted Response Files</strong><br>Added ability to receive PGP encrypted response files from the server. You can now receive PGP encrypted responses containing sensitive data for both processing and account update. Please refer to the Supported File Formats and Integration Notes under Batch API for more details.</li>
+              <li class="ch-added"><strong>EMV Data Encryption</strong><br>Added support for P2PE encryption of real-time EMV transactions. You can now submit P2PE-encrypted EMV data within a respective API call. Additionally, the logic was changed to avoid indicating an identifier of an associated decryption key. Previously, only encryption of track data was supported within the system. EMV data is submitted within accountData field. Please refer to Supported Operations and Integration Notes under Real-Time API for more details.</li>
+              <li class="ch-added"><strong>CA Keys Import Logic</strong><br>Implemented mechanism allowing to import CA keys. It is now possible to automatically import certificate authority keys necessary for EMV processing.</li>
+              <li class="ch-added"><strong>Users List Form on Audit Perspective</strong><br>Implemented new form called Users List that allows retrieving all information of any user available within the system. You can now get a list of all users within the system as well as review their details using Audit perspective.</li>
+              <li class="ch-added"><strong>Callbacks in Host Emulator</strong><br>Added ability to emulate callbacks within host emulator. You can now test callback mechanism while testing your integration with host emulator. To have callback tested, notifyURL parameter has to be submitted within sale, sale-auth, credit, credit-auth API requests.</li>
+              <li class="ch-added"><strong>Terminal Order Report</strong><br>Implemented Terminal Order report. The purpose of this report is to export terminal orders associated with a particular reseller. Search can be performed by a reseller, terminal order status or within a certain date range. The report is available under Analysis section in reports.</li>
+              <li class="ch-added"><strong>Reports Related to the Form 1099-K</strong><br>Implemented Data Export 1099 and Data Export 1099 (by processing date) reports. The purpose of these reports is to show total income of all settled transactions for a particular year. This information can be used in the Form 1099-K. Reports are available under the Data Export section and can be generated in CSV format.</li>
+              <li class="ch-added"><strong>User Master Report</strong><br>Implemented User Master report. The purpose of this report is to retrieve detailed information about a user including general and contact information, as well as portfolios, resellers and merchants available to a user. The report is available in PDF format under Users List form on Audit perspective.</li>
+              <li class="ch-added"><strong>Implemented User Audit report</strong><br>The purpose of this report is to provide information about failed login attempts of users as well as expiration dates of their user accounts. The report is available in HTML, CSV and PDF formats under Analysis section in reports. Terminal Management System.</li>
+              <li class="ch-added"><strong>Update Search Form on Portfolio Perspective</strong><br>Implemented new form called Update Search that allows seeing which terminals have been updated to a particular update version. You can now locate terminals using Update Search form and review their update history and terminal logs.</li>
+              <li class="ch-added"><strong>View Receipt Info Form</strong><br>Implemented new form called View Receipt Info allowing for retrieval of detailed information about terminal order receipts. Added View Receipt Info button and respective form with detailed receipt information to the terminal order related forms on Fulfillment and Merchant perspectives.</li>
+              <li class="ch-added"><strong>Terminal Provisioning</strong><br>Enhanced permission-based security mechanism allowing to control what owner is associated with a particular user. You can now select a particular owner for both newly created and existing users all over the system. This option is available for human and service users. Previously, there was no ability to modify an owner for a particular user.</li>
+              <li class="ch-updated"><strong>Assign User to Owner</strong><br>Implemented mechanism allowing to provision a terminal. You can now lock a terminal key associated with a particular terminal by submitting a respective value in log-state API request.</li>
+              <li class="ch-updated"><strong>System Audit Notifications</strong><br>Enhanced notification mechanism allowing to notify about a node in cluster environment where an error occurred. From system audit notifications, you can now obtain informationabout the exact node where errors occurred. Previously, there was no such detailed information for cluster environment.</li>
+              <li class="ch-updated"><strong>Export and Find API Calls</strong><br>Added ability to review additional information about transactions via export and find API calls. You can now retrieve customer account internal code and transaction internal code via export and find API calls for further reconcilliation with external systems, such as CRM. Previously, internal identifiers could not be retrieved.</li>
+              <li class="ch-updated"><strong>Terminal Exchange or Return Mechanism</strong><br>Enhanced terminal ordering mechanism allowing to return and exchange terminals. You can now either return or exchange previously ordered terminal if needed. Previously, only purchasing option was available in the gateway.</li>
+              <li class="ch-updated"><strong>Merchant Configuration Export</strong><br>Added ability to export merchant configuration. You can now export a list of merchants to check whether they are not set up or were updated with particular configurations. This can be done using Merchants form under Changes button on Audit perspective. Previously, this information was available only on the user interface.</li>
+              <li class="ch-updated"><strong>DBA Name</strong><br>Optimized validation on the Provisioning form. DBA name field is now required to be submitted via Provisioning form on Merchant perspective. Previously, this field was optional.</li>
+              <li class="ch-updated"><strong>Fulfillment Order Number</strong><br>Added ability to review a fulfillment order number on the user interface and within a Terminal Order report. You can now retrieve a number of a fulfillment order associated with a particular terminal using Orders form on Fulfillment and Merchant perspectives or Terminal Order report. Previously, this information was available only at the database level.</li>
+              <li class="ch-updated"><strong>Token Removal</strong><br>Fixed the issue with a token associated with a particular bank account not getting deleted along with merchant’s deposit information. Due to a bug, a token could not be removed from Deposit form on Merchant perspective when associated bank information was deleted manually. The issue is fixed now, and the system now automatically clears up token values associated with bank accounts for cases when all bank information used for funding is removed.</li>
+              <li class="ch-updated"><strong>Aggregated Validation Files</strong><br>Added ability to generate validation files for aggregated merchants. Validation files can now be generated for submitted files that are aggregated under associated merchants. Previously, validation files could be received only for files that have not been aggregated.</li>
+              <li class="ch-updated"><strong>Terminal Credentials</strong><br>Added reporting on serial number, activation code and shipping date of a terminal. You can now get information about a serial number, activation code and shipping date of a particular terminal using Terminal report and Terminals form on Portfolio perspective. Also you can now locate terminals by a particular serial number using the same form. Additionally, Terminals form was added to Reseller perspective. Previously, there was no ability to retrieve serial number, activation code and shipping date of a terminal at one place.</li>
+              <li class="ch-updated"><strong>HPP Support</strong><br>Added ability to perform sale and credit API operations with convenience fee included via hosted payment page. You can now make sale-auth, credit-auth and credit operations with convenience fees when the hosted payment page is used. Previously, sales with convenience fees were only supported for hosted payment pages.</li>
+              <li class="ch-updated"><strong>Reseller Attachment</strong><br>Adjusted merchant validation mechanism by limiting the ability to attach resellers to merchant accounts. You can now assign a reseller to a merchant only. If there is an attempt to attach a particular reseller to a merchant account, the following validation message will be received: “Operation is not supported for accounts”. Previously, resellers could be assigned to both merchants and merchant accounts, which could sometimes lead to different resellers being assigned to a merchant and its associated account.</li>
+              <li class="ch-updated"><strong>States and Time Zones</strong><br>Extended the list of time zones and states available within the system. You can now select any available time zone according to the desired location. Additionally, states for Russia, Egypt, Saudi Arabia and the UAE were added. Previously, only US, UK, Australia and Spain states and an incomplete list of time zones were available within the system.</li>
+              <li class="ch-updated"><strong>Terminal Order List Form</strong><br>Added Terminal Order List form to Reseller perspective. You can now access the Terminal Order List form and Terminal Order report using the Reseller perspective. Previously, this form and report were available only on the Merchant and Fulfillment perspectives.</li>
+              <li class="ch-updated"><strong>Attach Reseller to Portfolio</strong><br>Added ability to assign a reseller to a particular portfolio. You can now attach a reseller to a portfolio while creating a new reseller or modifying an existing one. Previously, only merchants could be associated with a portfolio.</li>
+              <li class="ch-updated"><strong>Terminal Provisioning</strong><br>Implemented mechanism allowing to provision a terminal. You can now lock a terminal key associated with a particular terminal by submitting a respective value in log-state API request.</li>
+              <li class="ch-updated"><strong>Terminal Provisioning</strong><br>Implemented mechanism allowing to provision a terminal. You can now lock a terminal key associated with a particular terminal by submitting a respective value in log-state API request.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 id="v1.3.0">Version 5.1 (Production: 5/23/2016)</h3>
+            <br>
+            <ul class="changelog">
+              <li class="ch-added"><strong>Automatic Statement Reconciliation Mechanism</strong><br>Added mechanism for automatic reconciliation of merchant statements based on Transaction Detail report available with the processor.</li>
+              <li class="ch-added"><strong>Convenience Fees Form</strong><br>Implemented new form – Convenience Fees, which allows to manage the rules for convenience fee calculation.</li>
+              <li class="ch-added"><strong></strong>>API Convenience Fee Request</strong><br>Added ability to calculate a convenience fee for a particular transaction via API.</li>
+              <li class="ch-added"><strong>New Format of MasterCard BINs</strong><br>Added support for newly-introduced BIN range for MasterCard. Starting with October 2016, MasterCard extends their BIN range with 2 series. The system now allows to process MasterCard credit cards starting with both 2 and 5 series. Previously, only 5 series MasterCard BINs processing was supported within the system.</li>
+              <li class="ch-added"><strong>EBT Cards Processing</strong><br>Added ability to emulate EBT card processing within Host Emulator. You can now test EBT cards while testing your integration with host emulator. To test EBT functionality, account type value should be properly indicated according to the gateway specification.</li>
+              <li class="ch-added"><strong>User Master Report</strong><br>Implemented User Master Report. The purpose of this report is to retrieve detailed information about a user including general and contact information, as well as portfolios, resellers and merchants available to a user. The report is available in PDF format under Users List form on Audit perspective.</li>
+              <li class="ch-added"><strong>Implemented User Audit report</strong><br>The purpose of this report is to provide information about failed login attempts of users as well as expiration dates of their user accounts. The report is available in HTML, CSV and PDF formats under Analysis section in reports.</li>
+              <li class="ch-added"><strong>Terminal Validation Error Notification</strong><br>Added mechanism which allows to send terminal validation error messages to merchant’s notify URL.<br>Merchants can now receive notifications about terminal transactions with validation errors to the specified notify URLs. Previously, realtime validation errors could not be received when a hosted payment page is used.</li>
+              <li class="ch-added"><strong>Fulfillments Profile</strong><br>Implemented new merchant profile group – Fulfillments – which allows to configure a profile for merchant’s fulfillment center. You can now set up a fulfillment center for the processing of merchant terminal orders.</li>
+              <li class="ch-added"><strong>Deferred Tokenization</strong><br>Implemented mechanism which allows processing of deferred tokenization requests. For cases when a terminal is operated in attached mode, you can now submit a deferred tokenization request without raw card data and subsequently retrieve this request from the system in order to add the card number and complete tokenization operation. Previously, deferred tokenization was not supported within the system.</li>
+              <li class="ch-added"><strong>View Receipt Info Form</strong><br>Implemented new form called View Receipt Info allowing for retrieval of detailed information about terminal order receipts. Added View Receipt Info button and respective form with detailed receipt information to the terminal order related forms on Fulfillment and Merchant perspectives.</li>
+              <li class="ch-updated"><strong>Terminal Order Sending Time Settings</strong><br>Changed delivery time settings for terminal orders to be submitted to TPG.All approved terminal orders can now be sent for further processing with TPG five time per day with 8 PM (server time) the latest. Previously, all orders were submitted at 9 PM and associated issues (if any) could be resolved only the next day.</li>
+              <li class="ch-updated"><strong>Portfolio Role Access Parameters</strong><br>Enhanced permission mechanism to restrict users access to merchants under a different portfolio. Users with Portfolio 1 role now do not have access to the portfolios which they are not bound to. Previously, user could see all the portfolios.</li>
+              <li class="ch-updated"><strong>Auto-completion On Payment Pages</strong><br>Optimized paypages data security mechanism. Word completion of sensitive data is not allowed now on hosted payment pages. All submitted data, such as credit card/bank account number, CSC, etc is not stored within the system. Previously, this information could be autocompleted by a customer who had made a transaction through a HPP before.</li>
+              <li class="ch-updated"><strong>Terminal Logs on User Perspective</strong><br>Added ability to review terminal logs on User Perspective. You can now use UI to view and analyze terminal logs associated with a particular merchant. Previously, terminal logs were available for review only on database level.</li>
+              <li class="ch-updated"><strong>Terminals Search Form</strong><br>Added ability to locate terminals available within the system. You can now easily search for any terminal available within the system. For this purpose a new form – Terminals Search – was added, which allows to locate a particular terminal by several search criteria, as well as change terminal parameters. Previously, terminal associated with a particular merchant could be found only by its terminal order number.</li>
+              <li class="ch-updated"><strong>Transaction Capture</strong><br>Added ability to manually capture a transaction on the user interface. Additionally, all options related to the transaction processing flow were combined into one button – Actions. You can now manually initiate a capture for a particular unsettled transaction on the UI. The respective button, as well as all buttons associated with transaction processing and reprocessing, are now logically grouped together for easier access.</li>
+              <li class="ch-updated"><strong>Convenience Fee Transaction in Original Sale</strong><br>Added ability to trace the Convenience fee transaction – Original transaction chain. You can now view the original sale for which a convenience fee transaction was created. Conversely, you can also view the convenience fee transaction for a given sale. Previously, there was no visibility as to the correlation between sales and their respective convenience fee transactions.</li>
+              <li class="ch-updated"><strong>Retail Cycle Code in API</strong><br>Extended API response with additional field – cycleCode. You can now obtain a retail transaction cycle ID in an API transaction response. Perviously, the cycle which a transaction belonged to was not identifiable within the API. Specified field is returned in API responses for Sale, Sale-Auth, Sale-Info, Credit, Credit-Auth, Credit-Info, Void, Refund, Capture, Increment, Balance Inquiry, Account Verification, Transfer, Activate, Deactivate, Reactivate, Convenience Fee, Create Alias, Delete Alies operations. Please, review Suported Operations under realtime API specification for more details.</li>
+              <li class="ch-updated"><strong>Account Update Processing</strong><br>Enhanced the logic of account update responses processing within the system. CAU response files are now processed within the system based on processor’s response codes, so that the records containing no updated information are ignored. Previously, fields containing no updated card data were automatically populated with original values.</li>
+              <li class="ch-updated"><strong>Input source for Non-EMV Transactions</strong><br>Enhanced API mechanism for non-EMV transactions. You can now obtain entryMediumType and entryModeType values in API responses for all transactions including the non-EMV ones. Previously, this value could only be returned for EMV transactions.</li>
+              <li class="ch-updated"><strong>Search of Merchants by Remitter</strong><br>Added ability to find merchants by a remitter as a search criteria. You can now locate merchants associated with a particular remitter on Modify Selection form. Previously, there was no ability to search merchants by remitter.</li>
+              <li class="ch-updated"><strong>Tokens in Subscription Files</strong><br>Added ability to transmit tokens in subscription files. You can now submit subscription files without raw sensitive data included. Tokenized account numbers can be used instead. Previously, there was no ability to transmit subscriptions files with tokens.</li>
+              <li class="ch-updated"><strong>Bank Holidays of 2016</strong><br>Extended gateway holiday list with bank holidays of 2016.Added Canadian and Australian bank holidays of 2016 to the gateway holiday list. Previously, only US bank holidays of 2016 were available within the system.</li>
+              <li class="ch-updated"><strong>Proxynization Scripts Removal</strong><br>Added automatic removal mechanism for completed API proxynization scripts. Proxynization scripts containing sensitive data will now be automatically removed from a customer’s device once the API request is processed. Previously, scripts were removed only after the page was refreshed.</li>
+              <li class="ch-updated"><strong>Batch Processing Policy Default Value</strong><br>Added ability to control merchant batch processing policy on both system and portfolio levels. You can now predefine the default value of batch processing policy either for all merchants within the system, or for merchants associated with a particular portfolio. Previously, batch processing policy could be set for every merchant separately.</li>
+              <li class="ch-updated"><strong>Account Number Tokenization</strong><br>Enhanced tokenization mechanism. Added ability to tokenize account numbers for cases when masked value is provided in the tokenization batch file. Previously, system could not process files with masked account numbers being supplied.</li>
+              <li class="ch-updated"><strong>Batch File Display Limit</strong><br>Expanded the limit of displayed batch submissions on Batch List form.You can now view up to 1000 batch files on the Batch List form. Previously, there was a limit of 200 batch files available for review.</li>
+              <li class="ch-updated"><strong>Refund Period Limit</strong><br>Enhanced refund issuing mechanism in regards to the permission policy. You can now limit the time period of when a refund can be issued for a transaction. By default, all users are not pemitted to issue refunds in 90 days after the initial sale was made.</li>
+              <li class="ch-updated"><strong>ZIP Code Format</strong><br>Added ability to use letters in ZIP code. You can now specify both digits and letters in ZIP Code value. Previously, ZIP code field could include digits only.</li>
+              <li class="ch-updated"><strong>Remitter Merchant Searching</strong><br>Added ability to search for Remitter merchants on Merchant perspective. You can now easily locate Remitter merchants on Select Merchants form. Previously, there was no ability to defile such search criteria when modifying merchant selection.</li>
+              <li class="ch-updated"><strong>View Transaction Form Enhancement</strong><br>Rearranged fields on View Transaction form and extended the form with additional transaction information. You can now view both void and fallback reasons, as well as the card entry information for a particular transaction on View Transaction form. Additionally, groupboxes and associated fields on this form were re-organized to better correspond their functionality.</li>
+              <li class="ch-updated"><strong>Account Update Transactions Splitting</strong><br>Added mechanism which allows to automatically split Account Update batch files into sub-batches. You can now submit big CAU files for processing. All files containing more than 50k transactions will be split into sub-batches. This allows to process CAU files with processors that have transaction limits for submitted batch files. In addition, optimized token processing logic for Account Update. Previously, if a processor had a limit for submitted transactions, big CAU files could be rejected. Additionally, the mechanism of AU token validation was added.</li>
+              <li class="ch-fixed"><strong>Blacklisted Transaction Status</strong><br>Fixed the issue with blacklisted transactions displaying incorrect status. Due to a bug, incorrect statuses were assigned to some blacklisted transactions on the gateway. The issue is fixed now, and all blacklisted payments are displaying accurate information.</li>
+              <li class="ch-fixed"><strong>Recurring Billing Address</strong><br>Fixed the issue with incorrect customer address information in payment details. Due to a bug, an incorrect state value was selected when creating a new payment for recurring billing customer. The issue is fixed now, and address information contains accurate data.</li>
+              <li class="ch-fixed"><strong>Merchant Activity by Agent</strong><br>Fixed the issue with Merchant activity by Agent report containing irrelevant data. Due to a bug, Merchant activity by Agent report could not collect accurate data from the system. The issue is fixed now and the report generating mechanism works as expected.</li>
+              <li class="ch-fixed"><strong>Dynamic Descriptor Value</strong><br>Fixed the issue with dynamic descriptor value being incorrectly displayed. Due to a bug, particular transactions were submitted for processing with incorrect dynamic descriptor value. The issue is fixed now, and the correct value is used for all transactions.</li>
+              <li class="ch-fixed"><strong>Sales Analysis Report</strong><br>Fixed the issue with Sales Analysis report not getting generated. Due to a bug, Sales Analysis report displayed no data for selected parameters. The issue is fixed now, and reporting mechanism works as expected.</li>
+              <li class="ch-fixed"><strong>PIN Debit Transaction Error</strong><br>Fixed the issue with PIN Debit transactions returning an error while testing an integration. Due to a bug, PIN Debit transactions made within the host emulator failed. The issue is fixed now, and PIN Debit API requests are processed as expected.</li>
+              <li class="ch-fixed"><strong>API Requests for Service Users</strong><br>Fixed the issue with inability to run API transactions for service users. Due to a bug, newly created service users were not able to make API calls within the system. The issue is fixed now, and service users have full access to API.</li>
+              <li class="ch-fixed"><strong>Refund Decline</strong><br>Fixed the issue with refunds being declined within the system. Due to a bug, there was no ability to refund sale transactions. The issue is fixed now, and refund mechanism works as expected.</li>
+              <li class="ch-fixed"><strong>Deposit Analysis Report</strong><br>Fixed the issue with the Deposit Analysis report missing Visa and Master Card prepaid transactions. Due to a bug, Visa and Master Ð¡ard prepaid transactions were not included in the Deposit Analysis report. The issue is fixed now, and all types of transactions are included in the report.</li>
+              <li class="ch-fixed"><strong>Merchant Statement Recipient List</strong><br>Fixed the issue with inability to update merchant statement recipient list. Due to a bug, there was no ability to save changes to merchant statement recipient list. The issue is fixed now, and the list can be properly updated.</li>
+              <li class="ch-fixed"><strong>Final Responses for Transactions in Rebill</strong><br>Fixed the issue with transaction responses being incorrectly delivered to merchants. Due to a bug, declined transactions with enabled Rebill feature were returned to merchants as final responses. The issue is fixed now, and responses are delivered as expected.</li>
+              <li class="ch-fixed"><strong>Amex Transactions in Forward Status</strong><br>Fixed the issue with Amex transactions not getting processed within the host emulator. Due a bug, sub-batches with Amex transactions got stuck in Forward status and could not be processed while testing an integration with the host emulator. The issue is fixed now, and Amex transactions are processed as expected.</li>
+              <li class="ch-fixed"><strong>Batch Transactions Refunding</strong><br>Fixed the issue with inability to refund particular batch transactions. Due to a bug, there was no ability to issue refunds for batch transactions for cases when a batch cycle was manually closed. The issue is fixed now, and all batch transactions can be refunded.</li>
+              <li class="ch-fixed"><strong>Merchant Statement Export Mismatch</strong><br>Fixed the mismatch between Merchant Statement Export report and Merchant Statement Export All Available Merchants. Due to a bug, there were some discrepancies between two reports – Merchant Statement Export and Merchant Statement Export All Available Merchants. The issue is fixed now, and both reports include accurate data.</li>
+              <li class="ch-fixed"><strong>API for Deferred Transactions</strong><br>Fixed the issue with API requests for deferred terminal transactions not getting properly transmitted. Due to a bug, fields entryMediumType, entryModeType, entryPinModeType, terminalCapabilityMode could not be properly submitted in API requests for deferred transactions, when a terminal was operated in attached mode. The issue is fixed now, and the fields are correctly transmitted.</li>
+              <li class="ch-fixed"><strong>EMV Transaction Processing</strong><br>Fixed the issue with particular EMV transactions not getting properly submitted for processing. Due to a bug, some of EMV transactions were submitted for processing with credit card numbers instead of track data. The issue is fixed now, and all EMV transactions are performed as expected.</li>
+              <li class="ch-fixed"><strong>Issuing Credits on UI</strong><br>Fixed the issue with inability to issue credits for successfull transactions on UI. Due to a bug, button used for issuing credits on user interface was not available for particular transactions. The issue is fixed now, and the button works as expected.</li>
+              <li class="ch-fixed"><strong>Statement Review</strong><br>Fixed the issue with merchant statements not getting automatically approved. Due to a bug, merchant statements had to be manually approved for all merchants including those having Statement Review feature disabled. The issue is fixed now, and statement review mechanism works as expected.</li>
+            </ul>
+          </section>
+
+
+        </article>
+        <!-- END Main content -->
+      </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <p>Copyright &copy; 2017. All right reserved</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <ul class="footer-menu">
+              <li><a class="active" href="page_changelog.html">Changelog</a></li>
+              <li><a href="page_credits.html">Credits</a></li>
+              <li><a href="mailto:support@thetheme.io">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+
+    <!-- Scripts -->
+    <script src="assets/js/theDocs.all.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>
